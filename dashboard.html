@@ -3,7 +3,7 @@
 <body>
 <head>
   <title>
-    Spotinsights -  Dashboard
+    Spotinsights - Dashboard
   </title>
    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
   <style>
@@ -64,6 +64,14 @@
   		margin-bottom:70px;
   		font-size: 35px;
 	}
+	
+	.tile-1:hover,
+    .tile-2:hover {
+      background-color: #1fd662ff;
+      color: white;
+      transform: scale(1.01);
+    }
+    
     #copyright {
         color: gray;
         font-size: 14px;
@@ -73,6 +81,9 @@
   </style>
   <link rel="icon" type="image/png" href="logoi.png">
 </head>
+<div id="container">
+    <img id="logo" src="logo.png" alt="Logo" />
+    </div>
 <h2 class="section-heading">Dashboard</h2>
 
 <div class="column-2 tile-1" onclick="window.location.href = 'playlists.html';">
@@ -83,6 +94,6 @@
 <div class="column-2 tile-2" onclick="window.location.href = 'analytics.html';">
   <h2 class="project-text">Analytics</h2>
 </div>
-
+<div id="copyright">CS230 Group 7</div>
 </body>
 </html>
