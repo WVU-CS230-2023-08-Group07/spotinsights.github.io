@@ -6,6 +6,7 @@
     Spotinsights - Sign Up
   </title>
    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+  
   <style>
     body {
       background-color: black;
@@ -27,7 +28,9 @@
       float: left;
       margin-left: 20px;
     }
-
+  #logo img{
+    max-width: 150px;
+  }
 
     .input-container {
       text-align: left;
@@ -63,6 +66,11 @@
       font-weight: bold;
       cursor: pointer;
       font-family: 'Varela Round', sans-serif;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+    button:hover {
+        background-color: #45a049; 
+        transform: scale(1.05); 
     }
     #copyright {
         color: gray;
@@ -76,7 +84,9 @@
 
 <body>
  
-  <img id="logo" src="logo.png" alt="Logo">
+  <a id="logo" href="index.html">
+      <img src="logo.png" alt="Logo">
+  </a>
   <div id="container">
     <h2>Sign Up</h2>
     <div class="input-container">
