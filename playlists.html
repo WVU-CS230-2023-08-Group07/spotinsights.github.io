@@ -1,9 +1,129 @@
 <!DOCTYPE html>
 <html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="styles.css"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+    Spotinsights - Playlist Ranking
+  </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+  <style>
+    
+    body {
+      background-color: black;
+      color: white;
+      font-family: 'Varela Round', sans-serif;
+      text-align: center;
+    }
+
+    #header {
+      font-size: 24px;
+      font-weight: bold;
+      color: #1fd662ff;
+      margin-top: 20px;
+    }
+
+    #container {
+      width: 500px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    #logo {
+      display: block;
+      float: left;
+      width: 150px;
+    }
+
+    #login-button,
+    #signup-button {
+      padding: 5px 10px;
+      background-color: #1D1D1D;
+      border: none;
+      border-radius: 20px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    #login-button {
+      float: right;
+      
+      margin-right: 10px;
+    }
+
+    #signup-button {
+      float: right;
+      
+      margin-right: 10px;
+    }
+
+    #ranking {
+      text-align: left;
+      margin-top: 20px;
+    }
+
+    .playlist-item {
+      margin-bottom: 10px;
+    }
+    .playlist-container {
+        background-color: #1D1D1D;
+        border-radius: 20px;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+    .playlist-image {
+        width: 50px; 
+        height: 50px; 
+        margin-right: 10px;
+    }
+    #copyright {
+        color: gray;
+        font-size: 14px;
+        text-align: center;
+        margin-top: 700px;
+    }
+  </style>
+  <link rel="icon" type="image/png" href="logoi.png">
+</head>
+
 <body>
+  <a id="signup-button" href="signup.html">Sign Up</a>
+  <a id="login-button" href="login.html">Login</a>
 
-<h1>playlists</h1>
-<p>playlists page</p>
+  <img id="logo" src="logo.png" alt="Logo" />
+  <div id="container">
 
+    <h1 id="header">Playlist Ranking</h1>
+        <div id="ranking">
+            <div class="playlist-container">
+                <img class="playlist-image" src="playlist.png" alt="Playlist 1">
+                <div class="playlist-item">1. Playlist 1</div>
+            </div>
+            <div class="playlist-container">
+                <img class="playlist-image" src="playlist.png" alt="Playlist 2">
+                <div class="playlist-item">2. Playlist 2</div>
+            </div>
+            <div class="playlist-container">
+                <img class="playlist-image" src="playlist.png" alt="Playlist 3">
+                <div class="playlist-item">3. Playlist 3</div>
+            </div>
+            <div class="playlist-container">
+                <img class="playlist-image" src="playlist.png" alt="Playlist 4">
+                <div class="playlist-item">4. Playlist 4</div>
+            </div>
+            <div class="playlist-container">
+                <img class="playlist-image" src="playlist.png" alt="Playlist 5">
+                <div class="playlist-item">5. Playlist 5</div>
+            </div>
+        </div>
+    </div>
+  <div id="copyright">CS230 Group 7</div>
 </body>
+
 </html>
