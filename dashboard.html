@@ -1,125 +1,134 @@
 <!DOCTYPE html>
 <html>
-<body>
-<head>
-  <title>
-    Spotinsights - Dashboard
-  </title>
-   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
-  <style>
-    body {
-      background-color: black;
-      color: white;
-      font-family: 'Varela Round', sans-serif;
-    }
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+	</script>
+	<body>
+	<head>
+ 		<title>
+    		Spotinsights - Dashboard
+  		</title>
+   		<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+  		<style>
+   			body {
+      			background-color: black;
+      			color: white;
+      			font-family: 'Varela Round', sans-serif;
+    		}
 
-    #container {
-      width: 150px;
-      margin: 0 auto;
-      padding: 20px;
-      text-align: center;
-    }
+    		#container {
+      			width: 150px;
+	      		margin: 0 auto;
+	      		padding: 20px;
+	      		text-align: center;
+    		}
 
-    #logo {
-      display: block;
-      margin: 0 auto;
-      width: 150px;
-      float: left;
-      margin-left: 20px;
-    }
+    		#logo {
+	      		display: block;
+	      		margin: 0 auto;
+	      		width: 150px;
+	      		float: left;
+	      		margin-left: 20px;
+    		}
     
-	#login-button,
-    #signup-button {
-      padding: 5px 10px;
-      background-color: #1D1D1D;
-      border: none;
-      border-radius: 20px;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
-      text-decoration: none;
-    }
+			#login-button,
+			#signup-button {
+			  padding: 5px 10px;
+			  background-color: #1D1D1D;
+			  border: none;
+			  border-radius: 20px;
+			  color: white;
+			  font-weight: bold;
+			  cursor: pointer;
+			  text-decoration: none;
+			}
     
-	#login-button {
-      float: right;
-
-      margin-right: 10px;
-    }
+			#login-button {
+		      float: right;
+		
+		      margin-right: 10px;
+		    }
 	
-    #signup-button {
-      float: right;
-
-      margin-right: 10px;
-    }
+		    #signup-button {
+		      float: right;
+		
+		      margin-right: 10px;
+		    }
     
-    label {
-      display: block;
-      margin-bottom: 5px;
-    }
-	.column-2 {
- 		float: left;
-  		width: 48%;
-  		padding: 10px;
-  		margin:20px;
-  		height: 250px;
-	}
-    .tile-1 {
- 		background: null;
-  		background-color: #1fd662ff;
-  		border-radius: 25px;
-	}
-
-	.tile-2 {
-  		background-color: #1fd662ff;
-  		border-radius: 25px;
-	}
-	
-	.tile-text {
-  		text-align:center;
-  		font-size:50px;
-	}
-	
-	.section-heading {
-		background-color: black;
-      	color: white;
-      	font-family: 'Varela Round', sans-serif;
-  		text-align: left;
-  		margin-top: 75px;
-  		margin-bottom:70px;
-  		font-size: 35px;
-	}
-	
-	.tile-1:hover,
-    .tile-2:hover {
-      background-color: #1fd662ff;
-      color: white;
-      transform: scale(1.01);
-    }
-    
-    #copyright {
-        color: gray;
-        font-size: 14px;
-        text-align: center;
-        margin-top: 400px;
-    }
-  </style>
-  <link rel="icon" type="image/png" href="logoi.png">
-</head>
-<a id="signup-button" href="signup.html">Sign Up</a>
-  <a id="login-button" href="login.html">Login</a>
-<div id="container">
-    <img id="logo" src="logo.png" alt="Logo" />
+		    label {
+		      display: block;
+		      margin-bottom: 5px;
+		    }
+			.column-2 {
+		 		float: left;
+		  		width: 48%;
+		  		padding: 10px;
+		  		margin:20px;
+		  		height: 250px;
+			}
+		    .tile-1 {
+		 		background: null;
+		  		background-color: #1fd662ff;
+		  		border-radius: 25px;
+			}
+		
+			.tile-2 {
+		  		background-color: #1fd662ff;
+		  		border-radius: 25px;
+			}
+			
+			.tile-text {
+		  		text-align:center;
+		  		font-size:50px;
+			}
+			
+			.section-heading {
+				background-color: black;
+		      	color: white;
+		      	font-family: 'Varela Round', sans-serif;
+		  		text-align: left;
+		  		margin-top: 75px;
+		  		margin-bottom:70px;
+		  		font-size: 35px;
+			}
+			
+			.tile-1:hover,
+		    .tile-2:hover {
+		      background-color: #1fd662ff;
+		      color: white;
+		      transform: scale(1.01);
+		    }
+		    
+		    #copyright {
+		        color: gray;
+		        font-size: 14px;
+		        text-align: center;
+		        margin-top: 400px;
+		    }
+  		</style>
+  		<link rel="icon" type="image/png" href="logoi.png">
+	</head>
+	<a id="signup-button" href="signup.html">Sign Up</a>
+  	<a id="login-button" href="login.html">Login</a>
+	<div id="container">
+    	<img id="logo" src="logo.png" alt="Logo" />
     </div>
-<h2 class="section-heading">Dashboard</h2>
+	<h2 class="section-heading">Dashboard</h2>
 
-<div class="column-2 tile-1" onclick="window.location.href = 'playlists.html';">
-	<h2 class="project-text">Playlists</h2>
-</div>
+	<div class="column-2 tile-1" onclick="window.location.href = 'playlists.html';">
+		<h2 class="project-text">Playlists</h2>
+		<iframe style="border-radius:12px"
+          src="https://open.spotify.com/embed/playlist/178powjcjTjaDlhlo1QUj2?utm_source=generator&theme=0" width="100%"
+          height="199" frameBorder="0" allowfullscreen=""
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+	</div>
 
 
-<div class="column-2 tile-2" onclick="window.location.href = 'analytics.html';">
-  <h2 class="project-text">Analytics</h2>
-</div>
-<div id="copyright">CS230 Group 7</div>
+	<div class="column-2 tile-2" onclick="window.location.href = 'analytics.html';">
+  		<h2 class="project-text">Analytics</h2>
+  		<!-- Filler for Analytics chart preview -->
+  		<!--  <canvas id="myChart" style="width:100%;max-width:700px"></canvas>-->
+	</div>
+	<div id="copyright">CS230 Group 7</div>
 </body>
 </html>
