@@ -27,7 +27,7 @@
     }
 
     #container {
-      width: 500px;
+      width: 700px;
       margin: 0 auto;
       padding: 20px;
     }
@@ -92,7 +92,20 @@
       color: gray;
       font-size: 14px;
       text-align: center;
-      margin-top: 300px;
+      margin-top: 700px;
+    }
+    .image-button {
+        display: inline-block;
+        background-image: url('heart.png');
+        width: 24px;
+        height: 22px;
+        border: none;
+        cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .image-button:hover {
+        background-image: url('green.png');
     }
   </style>
   <link rel="icon" type="image/png" href="logoi.png">
@@ -110,34 +123,45 @@
     <h1 id="header">Playlist Ranking</h1>
     <div id="ranking">
       <div class="playlist-container">
+        <p>1.</p>
         <iframe style="border-radius:12px"
           src="https://open.spotify.com/embed/playlist/72yso3rgCFDAGjYHqdjPZe?utm_source=generator" width="100%"
           height="152" frameBorder="0" allowfullscreen=""
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        
+        <div class="image-button"></div>
       </div>
       <div class="playlist-container">
+        <p>2.</p>
         <iframe style="border-radius:12px"
           src="https://open.spotify.com/embed/playlist/2aJur8sGGtP1LafNdZ90Ei?utm_source=generator" width="100%"
           height="152" frameBorder="0" allowfullscreen=""
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <div class="image-button"></div>
       </div>
       <div class="playlist-container">
+        <p>3.</p>
         <iframe style="border-radius:12px"
           src="https://open.spotify.com/embed/playlist/50OLgzDno01NNeTPyyro8X?utm_source=generator" width="100%"
           height="152" frameBorder="0" allowfullscreen=""
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <div class="image-button"></div>
       </div>
       <div class="playlist-container">
+        <p>4.</p>
         <iframe style="border-radius:12px"
           src="https://open.spotify.com/embed/playlist/0a2kRf1jDZ8hmXUqOj5U4C?utm_source=generator" width="100%"
           height="152" frameBorder="0" allowfullscreen=""
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <div class="image-button"></div>
       </div>
       <div class="playlist-container">
+        <p>5.</p>
         <iframe style="border-radius:12px"
           src="https://open.spotify.com/embed/playlist/37i9dQZF1DXb3m918yXHxA?utm_source=generator" width="100%"
           height="152" frameBorder="0" allowfullscreen=""
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <div class="image-button"></div>
       </div>
     </div>
   </div>
