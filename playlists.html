@@ -82,10 +82,9 @@
       margin-bottom: 10px;
     }
 
-    .playlist-image {
-      width: 50px;
-      height: 50px;
-      margin-right: 10px;
+    .like-container {
+      display: flex;
+      align-items: center;
     }
 
     #copyright {
@@ -96,19 +95,19 @@
     }
     .image-button {
         display: inline-block;
-        background-image: url('assets/heart.png');
+        background-image: url('heart.png');
         width: 24px;
         height: 22px;
         border: none;
         cursor: pointer;
-      margin-top: 10px;
+      margin-right: 20px
     }
 
     .image-button:hover {
-        background-image: url('assets/green.png');
+        background-image: url('green.png');
     }
   </style>
-  <link rel="icon" type="image/png" href="assets/logoi.png">
+  <link rel="icon" type="image/png" href="logoi.png">
 </head>
 
 <body>
@@ -116,7 +115,7 @@
   <a id="login-button" href="login.html">Login</a>
 
   <a id="logo" href="index.html">
-    <img src="assets/logo.png" alt="Logo">
+    <img src="logo.png" alt="Logo">
   </a>
   <div id="container">
 
@@ -126,42 +125,57 @@
         <p>1.</p>
         <iframe style="border-radius:12px"
           src="https://open.spotify.com/embed/playlist/72yso3rgCFDAGjYHqdjPZe?utm_source=generator" width="100%"
-          height="152" frameBorder="0" allowfullscreen=""
+          height="152" frameBorder="1" allowfullscreen=""
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         
-        <div class="image-button"></div>
+        <div class="like-container">
+          <div class="image-button"></div>
+          <p class="liked-count">Liked by: ___ users</p>
+        </div>
       </div>
       <div class="playlist-container">
         <p>2.</p>
         <iframe style="border-radius:12px"
           src="https://open.spotify.com/embed/playlist/2aJur8sGGtP1LafNdZ90Ei?utm_source=generator" width="100%"
-          height="152" frameBorder="0" allowfullscreen=""
+          height="152" frameBorder="1" allowfullscreen=""
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-        <div class="image-button"></div>
+        <div class="like-container">
+          <div class="image-button"></div>
+          <p class="liked-count">Liked by: ___ users</p>
+        </div>
       </div>
       <div class="playlist-container">
         <p>3.</p>
         <iframe style="border-radius:12px"
           src="https://open.spotify.com/embed/playlist/50OLgzDno01NNeTPyyro8X?utm_source=generator" width="100%"
-          height="152" frameBorder="0" allowfullscreen=""
+          height="152" frameBorder="1" allowfullscreen=""
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-        <div class="image-button"></div>
+        <div class="like-container">
+          <div class="image-button"></div>
+          <p class="liked-count">Liked by: ___ users</p>
+        </div>
       </div>
       <div class="playlist-container">
         <p>4.</p>
         <iframe style="border-radius:12px"
           src="https://open.spotify.com/embed/playlist/0a2kRf1jDZ8hmXUqOj5U4C?utm_source=generator" width="100%"
-          height="152" frameBorder="0" allowfullscreen=""
+          height="152" frameBorder="1" allowfullscreen=""
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-        <div class="image-button"></div>
+        <div class="like-container">
+          <div class="image-button"></div>
+          <p class="liked-count">Liked by: ___ users</p>
+        </div>
       </div>
       <div class="playlist-container">
         <p>5.</p>
         <iframe style="border-radius:12px"
           src="https://open.spotify.com/embed/playlist/37i9dQZF1DXb3m918yXHxA?utm_source=generator" width="100%"
-          height="152" frameBorder="0" allowfullscreen=""
+          height="152" frameBorder="1" allowfullscreen=""
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-        <div class="image-button"></div>
+        <div class="like-container">
+          <div class="image-button"></div>
+          <p class="liked-count">Liked by: ___ users</p>
+        </div>
       </div>
     </div>
   </div>
