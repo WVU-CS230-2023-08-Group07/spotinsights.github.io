@@ -1,0 +1,22 @@
+{
+  "name": "accountsjs",
+  "version": "1.0.0",
+  "description": "JavaScript file for testing how to store accounts into a JSON file",
+  "main": "jsonConverter.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WVU-CS230-2023-08-Group07/spotinsights.github.io.git"
+  },
+  "author": "Cayden Pava",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WVU-CS230-2023-08-Group07/spotinsights.github.io/JSONEncoder/issues"
+  },
+  "homepage": "https://github.com/WVU-CS230-2023-08-Group07/spotinsights.github.io/JSONEncoder#readme",
+  "dependencies": {
+    "fs": "^0.0.1-security"
+  }
+}
