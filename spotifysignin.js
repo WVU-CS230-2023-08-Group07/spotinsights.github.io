@@ -17,6 +17,7 @@ document.getElementById("authorizeButton").addEventListener("click", function ()
 
 
 
+
 export async function redirectToAuthCodeFlow(clientId) {
   const verifier = generateCodeVerifier(128);
   const challenge = await generateCodeChallenge(verifier);
