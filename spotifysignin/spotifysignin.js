@@ -1,9 +1,8 @@
-document.getElementById("authorizeButton").addEventListener("click", function () {
+document.addEventListener('DOMContentLoaded', function() {
   document.getElementById("authorizeButton").style.display = "none";
   const clientId = "1a9863d157de4ba9aff6cfec18843f5b"; 
   const params = new URLSearchParams(window.location.search);
   const code = params.get("code");
-
   if (!code) {
       redirectToAuthCodeFlow(clientId);
   } else {
@@ -12,8 +11,8 @@ document.getElementById("authorizeButton").addEventListener("click", function ()
           .then(profile => populateUI(profile))
           .catch(error => console.error(error));
   }
+  
 });
-
 
 export async function redirectToAuthCodeFlow(clientId) {
   const verifier = generateCodeVerifier(128);
@@ -24,7 +23,7 @@ export async function redirectToAuthCodeFlow(clientId) {
   const params = new URLSearchParams();
   params.append("client_id", clientId);
   params.append("response_type", "code");
-  params.append("redirect_uri", "https://wvu-cs230-2023-08-group07.github.io/spotinsights.github.io/spotifysignin/callback");
+  params.append("redirect_uri", "https://wvu-cs230-2023-08-group07.github.io/spotinsights.github.io/spotifysignin/");
   params.append("scope", "user-read-private user-read-email");
   params.append("code_challenge_method", "S256");
   params.append("code_challenge", challenge);
@@ -57,7 +56,7 @@ export async function getAccessToken(clientId, code) {
   params.append("client_id", clientId);
   params.append("grant_type", "authorization_code");
   params.append("code", code);
-  params.append("redirect_uri", "https://wvu-cs230-2023-08-group07.github.io/spotinsights.github.io/spotifysignin/callback");
+  params.append("redirect_uri", "https://wvu-cs230-2023-08-group07.github.io/spotinsights.github.io/spotifysignin/");
   params.append("code_verifier", verifier);
 
   const result = await fetch("https://accounts.spotify.com/api/token", {
@@ -74,22 +73,22 @@ async function fetchProfile(token) {
   const result = await fetch("https://api.spotify.com/v1/me", {
     method: "GET", headers: { Authorization: `Bearer ${token}` }
   });
-
+  
   return await result.json();
 }
 
+function setCookie(name, value, days) {
+    var expires = "";
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + value + expires + "; path=/";
+}
+
 function populateUI(profile) {
-  document.getElementById("displayName").innerText = profile.display_name;
-  if (profile.images[0]) {
-    const profileImage = new Image(200, 200);
-    profileImage.src = profile.images[0].url;
-    document.getElementById("avatar").appendChild(profileImage);
-    document.getElementById("imgUrl").innerText = profile.images[0].url;
-  }
-  document.getElementById("id").innerText = profile.id;
-  document.getElementById("email").innerText = profile.email;
-  document.getElementById("uri").innerText = profile.uri;
-  document.getElementById("uri").setAttribute("href", profile.external_urls.spotify);
-  document.getElementById("url").innerText = profile.href;
-  document.getElementById("url").setAttribute("href", profile.href);
+  var jsonString = JSON.stringify(profile);
+  setCookie("result", jsonString, 365);
+  window.location.href = 'callback/';
 }
