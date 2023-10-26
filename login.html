@@ -1,31 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Spotinsights - Login</title>
 	
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Spotinsights Login</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="login-page.css">
-  <script defer src="login-page.js"></script>
-
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+	
+	<link rel="stylesheet" href="login.css">
+	<link rel="icon" type="image/png" href="assets/logoi.png">
+	
+	<script defer src="login.js"></script>
 </head>
 <body>
-    <main id="login-main-container">
-    <h1 id="login-header">Login to Spotinsights</h1>
-	
-<div class="top-left-corner">
-	<img src="assets/logo.png" alt="Logo" width="130" height="30" class="logo-picture">
-</div>
+	<a id="logo" href="index.html">
+		<img src="assets/logo.png" alt="Logo">
+	</a>
 
-	<div id="login-error-box">
-      <p id="login-error">Invalid username and/or password</p>
-    </div>
-    
-    <form id="login-box">
-      <input type="text" name="username" id="username-field" class="login-details" placeholder="Username">
-      <input type="password" name="password" id="password-field" class="login-details" placeholder="Password">
-      <input type="submit" value="Login" id="submit-button">
-    </form>   
+	<form id="login-container">
+		<h2>Login</h2>
+		<div class="input-container">
+			<label for="username">Username:</label>
+			<input id="username" type="text" name="username" required>
+		</div>
+		<div class="input-container">
+			<label for="password">Password:</label>
+			<input id="password" type="password" name="password" required>
+		</div>
+		<div class="button-container">
+			<button id="login-button" type="submit">Login</button>
+		</div>
+		<div class="error-container">
+			<p id="login-error"></p>
+		</div>
+	</form>
+	
+	<!-- Need to make adjustments to positioning -->
+	<!-- <div id="copyright">CS230 Group 7</div> -->
 </body>
 </html>

@@ -1,18 +1,27 @@
-const loginBox = document.getElementById("login-box");
-const loginButton = document.getElementById("submit-button");
-const loginErrorMsg = document.getElementById("login-error");
+window.addEventListener('DOMContentLoaded', domLoaded); // Call domLoaded() when DOM is loaded
 
-/// When user clicks Login button
-loginButton.addEventListener("click", (e) => {
-    e.preventDefault();
-    const username = loginBox.username.value;
-    const password = loginBox.password.value;
-
-/// Change values in quotes to change set information
-    if (username === "username" && password === "password") {
-        alert("Successful login");
-        location.reload();
-    } else {
-        loginErrorMsg.style.opacity = 1;
-    }
-})
+function domLoaded() {
+	const username = document.getElementById('username');
+	const password = document.getElementById('password');
+	const loginButton = document.getElementById('login-button');
+	const loginError = document.getElementById('login-error');
+	
+	// When user clicks Login button
+	loginButton.addEventListener('click', (event) => {
+		event.preventDefault();
+		const usernameVal = username.value;
+		const passwordVal = password.value;
+		
+		// Check conditions for username and password
+		if (usernameVal === '' || passwordVal === '') {
+			loginError.style.opacity = 1;
+			loginError.innerHTML = 'Please enter the required fields';
+		} else if (usernameVal !== 'username' || passwordVal !== 'password') {
+			loginError.style.opacity = 1;
+			loginError.innerHTML = 'Incorrect username and/or password';
+		} else {
+			alert('Successful login');
+			location.reload();
+		}
+	});
+}
