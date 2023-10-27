@@ -5,11 +5,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const clientId = "1a9863d157de4ba9aff6cfec18843f5b";
   const params = new URLSearchParams(window.location.search);
   const code = params.get("code");
-  accessToken = getCookie("accessToken");
-  console.log(accessToken)
-  if (accessToken !== "NaN") {
-    window.location.href = 'callback/';
-  }
+
+  
   if (!code) {
     redirectToAuthCodeFlow(clientId);
   } else {
@@ -25,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .catch(error => console.error(error));
   }
-
+  console.log(accessToken)
 });
 
 export async function redirectToAuthCodeFlow(clientId) {
