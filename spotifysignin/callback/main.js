@@ -1,41 +1,39 @@
-// Retrieve data from cookies
-var result = getCookie("result");
+const result = getCookie("result");
 var currSong = getCookie("songURL");
+var urlParts = currSong.split("/");
+var timeRemaining_ms = getCookie("timeRemaining_ms");
 var accessToken = getCookie("accessToken");
-
-// Display song information in the console
 console.log(currSong);
 console.log(result);
-
-// Create the Spotify track URL
-if (currSong !== "null"){
-  var urlParts = currSong.split("/");
-}
-
+console.log(timeRemaining_ms);
+document.cookie = "timeRemaining_ms" + "=;expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 var spotifyTrackUrl = "https://open.spotify.com/embed/track/" + urlParts[4];
 
-// Create and configure the iframe for Spotify embed
+    // Use the refresh interval from the cookie in the meta tag
+    var metaTag = document.createElement('meta');
+    metaTag.httpEquiv = "refresh";
+    metaTag.content = timeRemaining_ms;
+    document.getElementsByTagName('head')[0].appendChild(metaTag);
+
+
 const iframe = document.createElement('iframe');
 iframe.style.borderRadius = '12px';
 iframe.src = spotifyTrackUrl;
-iframe.width = '15%';
+iframe.width = '25%';
 iframe.height = '352';
 iframe.frameBorder = '0';
 iframe.allowFullscreen = true;
 iframe.allow = 'autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture';
 iframe.loading = 'lazy';
 
-// Add the iframe to the HTML page
 const spotifyEmbedContainer = document.getElementById('spotifyEmbed');
 spotifyEmbedContainer.appendChild(iframe);
-
-// Refresh the iframe content
 refreshIframe();
-
-// Populate the user interface with Spotify user profile data
+setTimeout(refreshIframe, timeRemaining_ms);
 populateUI(JSON.parse(result));
 
-// Function to populate the UI with user profile data
+
+
 function populateUI(profile) {
   document.getElementById("displayName").innerText = profile.display_name;
   if (profile.images[0]) {
@@ -51,55 +49,57 @@ function populateUI(profile) {
   document.getElementById("url").innerText = profile.href;
   document.getElementById("url").setAttribute("href", profile.href);
 }
-
-// Function to retrieve a cookie value by name
 function getCookie(name) {
-  var nameEQ = name + "=";
-  var cookies = document.cookie.split(';');
-  for (var i = 0; i < cookies.length; i++) {
-    var cookie = cookies[i].trim();
-    if (cookie.indexOf(nameEQ) === 0) {
-      return cookie.substring(nameEQ.length);
+    var nameEQ = name + "=";
+    var cookies = document.cookie.split(';');
+    for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i];
+        while (cookie.charAt(0) == ' ') {
+            cookie = cookie.substring(1, cookie.length);
+        }
+        if (cookie.indexOf(nameEQ) == 0) {
+            return cookie.substring(nameEQ.length, cookie.length);
+        }
     }
-  }
-  return null;
+    return null;
 }
 
-// Function to refresh the iframe content
 function refreshIframe() {
-  const iframe = document.getElementById('spotifyEmbed');
+    const iframe = document.getElementById('spotifyEmbed');
   fetchCurrentSong(accessToken)
-    .then(currentSongData => {
-      const song = currentSongData;
-      const songURL = song.item.external_urls.spotify;
-      const songDuration = song.item.duration_ms;
-      const songProgess = song.item.progress_ms;
-      const timeRemaining_ms = songDuration - songProgess;
-      setCookie("songURL", songURL, 365);
-      setCookie("timeRemaining_ms", timeRemaining_ms, 365);
-    })
-    .catch(error => {
-      console.error(error);
-    });
-  // Update the iframe's source
-  currSong = getCookie("songURL");
-  urlParts = currSong.split("/");
-  const spotifyTrackUrl = "https://open.spotify.com/embed/track/" + urlParts[4];
-  iframe.src = spotifyTrackUrl;
+  .then(currentSongData => {
+    var song = currentSongData;
+    var songURL = song.item.external_urls.spotify;
+    var songDuration = song.item.duration_ms;
+    var songProgess = song.item.progress_ms;
+    var timeRemaining_ms = songDuration - songProgess;
+    setCookie("songURL", songURL, 365);
+    setCookie("timeRemaining_ms", timeRemaining_ms, 365);
+  })
+  .catch(error => {
+    console.error(error);
+  });
+    currSong = getCookie("songURL");
+    urlParts = currSong.split("/");
+    timeRemaining_ms = getCookie("timeRemaining_ms");
+    spotifyTrackUrl = "https://open.spotify.com/embed/track/" + urlParts[4];
+    iframe.src = iframe.src; 
 }
 
-// Function to fetch the user's current song from the Spotify API
 async function fetchCurrentSong(token) {
   const result = await fetch("https://api.spotify.com/v1/me/player/currently-playing", {
-    method: "GET",
-    headers: { Authorization: `Bearer ${token}` }
+    method: "GET", headers: { Authorization: `Bearer ${token}` }
   });
 
   return result.json();
 }
 
-// Function to set a cookie with a given name, value, and expiration days
 function setCookie(name, value, days) {
-  const expires = days ? "; expires=" + new Date(new Date().getTime() + (days * 24 * 60 * 60 * 1000)).toUTCString() : "";
+  var expires = "";
+  if (days) {
+    var date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    expires = "; expires=" + date.toUTCString();
+  }
   document.cookie = name + "=" + value + expires + "; path=/";
 }
