@@ -8,9 +8,11 @@ console.log(currSong);
 console.log(result);
 
 // Create the Spotify track URL
-var urlParts = currSong.split("/");
-var spotifyTrackUrl = "https://open.spotify.com/embed/track/" + urlParts[4];
+if (currSong !== "null"){
+  var urlParts = currSong.split("/");
+}
 
+var spotifyTrackUrl = "https://open.spotify.com/embed/track/" + urlParts[4];
 
 // Create and configure the iframe for Spotify embed
 const iframe = document.createElement('iframe');
