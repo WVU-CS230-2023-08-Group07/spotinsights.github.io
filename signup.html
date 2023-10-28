@@ -6,7 +6,8 @@
     Spotinsights - Sign Up
   </title>
    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
-  
+   <script src="signup.js"></script>
+
   <style>
     body {
       background-color: black;
@@ -80,6 +81,10 @@
     }
   </style>
   <link rel="icon" type="image/png" href="assets/logoi.png">
+  <!-- Include Firebase SDK -->
+	<script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-firestore.js"></script>
 </head>
 
 <body>
@@ -90,8 +95,8 @@
   <div id="container">
     <h2>Sign Up</h2>
     <div class="input-container">
-      <label for="username">Username:</label>
-      <input type="text" id="username" name="username" required>
+      <label for="Email">Email:</label>
+      <input type="text" id="Email" name="Email" required>
     </div>
     <div class="input-container">
       <label for="password">Password:</label>
@@ -102,10 +107,32 @@
       <input type="password" id="confirmPassword" name="confirmPassword" required>
     </div>
     <div class="btn-container">
-      <button type="submit" id="button">Sign Up</button>
+      <button type="submit" id="signup-button">Sign Up</button>
     </div>
+	<div class="error-container">
+		<p id="signup-error"></p>
+	  </div>
   </div>
   <div id="copyright">CS230 Group 7</div>
+  
+  <script>
+	var firebaseConfig = {
+		apiKey: "AIzaSyCiaoHpxeFZWA4gb6NJzMGunj7ytNSChKY",
+
+		authDomain: "spotinsights.firebaseapp.com",
+	
+		projectId: "spotinsights",
+	
+		storageBucket: "spotinsights.appspot.com",
+	
+		messagingSenderId: "293805645735",
+	
+		appId: "1:293805645735:web:490f3ccf4444b613f16082"
+	};
+
+	firebase.initializeApp(firebaseConfig);
+
+</script>
 </body>
 
 </html>
