@@ -3,9 +3,9 @@ window.addEventListener('DOMContentLoaded', domLoaded); // Call domLoaded() when
 function domLoaded() {
     // Get HTML Elements
     const button = document.getElementById('signup-button'); // Update the ID to match your HTML
-    const email = document.getElementById('Email'); // Update the ID to match your HTML
+    const email = document.getElementById('email'); // Update the ID to match your HTML
     const password = document.getElementById('password');
-    const confirmPassword = document.getElementById('confirmPassword'); // Update the ID to match your HTML
+    const confirmPassword = document.getElementById('confirm-password'); // Update the ID to match your HTML
     const signupError = document.getElementById('signup-error');
 
     // Event on button press; check user input information
@@ -24,8 +24,9 @@ function domLoaded() {
                         .then((userCredential) => {
                             // User registration successful
                             const user = userCredential.user;
-                            console.log("User registered:", user);
+                            console.log('User registered:', user);
                             // You can redirect the user to a new page or show a success message.
+							window.location.href = 'dashboard.html'; // Redirect to dashboard.html
                         })
                         .catch((error) => {
                             // Handle Firebase Authentication errors
@@ -34,13 +35,13 @@ function domLoaded() {
                             signupError.innerText = errorMessage;
                         });
                 } else {
-                    signupError.innerText = "Passwords do not match.";
+                    signupError.innerText = 'Passwords do not match.';
                 }
             } else {
-                signupError.innerText = "Password must be at least 8 characters long.";
+                signupError.innerText = 'Password must be at least 8 characters long.';
             }
         } else {
-            signupError.innerText = "All fields are required.";
+            signupError.innerText = 'All fields are required.';
         }
     });
 }

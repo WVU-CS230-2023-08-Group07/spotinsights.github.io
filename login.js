@@ -1,27 +1,28 @@
 window.addEventListener('DOMContentLoaded', domLoaded); // Call domLoaded() when DOM is loaded
 
 function domLoaded() {
-	const username = document.getElementById('username');
+	// Get HTML Elements
+	const button = document.getElementById('login-button');
+	const email = document.getElementById('email');
 	const password = document.getElementById('password');
-	const loginButton = document.getElementById('login-button');
 	const loginError = document.getElementById('login-error');
 	
-	// When user clicks Login button
-	loginButton.addEventListener('click', (event) => {
-		event.preventDefault();
-		const usernameVal = username.value;
+	// Event on button press; check user input information
+	button.addEventListener('click', (e) => {
+		e.preventDefault(); // Prevent the form from submitting
+		
+		const emailVal = email.value;
 		const passwordVal = password.value;
 		
-		// Check conditions for username and password
-		if (usernameVal === '' || passwordVal === '') {
-			loginError.style.opacity = 1;
-			loginError.innerHTML = 'Please enter the required fields';
-		} else if (usernameVal !== 'username' || passwordVal !== 'password') {
-			loginError.style.opacity = 1;
-			loginError.innerHTML = 'Incorrect username and/or password';
-		} else {
-			alert('Successful login');
-			location.reload();
-		}
+		firebase.auth().signInWithEmailAndPassword(emailVal, passwordVal)
+			.then((userCredential) => {
+				// User signed in successfully
+				const user = userCredential.user;
+				window.location.href = 'dashboard.html'; // Redirect to dashboard.html
+			})
+			.catch((error) => {
+				// Handle login errors
+				loginError.innerText = 'Invalid username or password. Please try again.';
+			});
 	});
 }

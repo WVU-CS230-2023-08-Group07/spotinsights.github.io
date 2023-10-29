@@ -1,72 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Spotinsights Login</title>
-  <link rel="stylesheet" href="login.css">
-  <!-- Firebase SDK -->
-  <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-firestore.js"></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Spotinsights - Login</title>
+	<link rel="icon" type="image/png" href="assets/logoi.png">
+	
+	<!-- Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+	
+	<!-- Firebase SDK -->
+	<script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-firestore.js"></script>
+	
+	<!-- CSS Stylesheets -->
+	<link rel="stylesheet" href="login.css">
+	
+	<!-- JavaScript -->
+	<script defer src="login.js"></script>
 </head>
 <body>
-  <main id="login-main-container">
-    <h1 id="login-header">Login to Spotinsights</h1>
+	<a id="logo" href="index.html">
+		<img src="assets/logo.png" alt="Logo">
+	</a>
 
-    <div class="top-left-corner">
-      <img src="https://github.com/WVU-CS230-2023-08-Group07/spotinsights.github.io/blob/main/assets/logo.png?raw=true" alt="Logo" width="130" height="30" class="logo-picture">
-    </div>
-
-    <div id="login-error-box">
-      <p id="login-error">Invalid username and/or password</p>
-    </div>
-    
-    <form id="login-box">
-      <input type="text" name="username" id="username-field" class="login-details" placeholder="Username">
-      <input type="password" name="password" id="password-field" class="login-details" placeholder="Password">
-      <input type="submit" value="Login" id="submit-button">
-    </form>   
-  </main>
-
-  <!-- Initialize Firebase -->
-  <script>
-    const firebaseConfig = {
-      apiKey: "AIzaSyCiaoHpxeFZWA4gb6NJzMGunj7ytNSChKY",
-  
-      authDomain: "spotinsights.firebaseapp.com",
-  
-      projectId: "spotinsights",
-  
-      storageBucket: "spotinsights.appspot.com",
-  
-      messagingSenderId: "293805645735",
-  
-      appId: "1:293805645735:web:490f3ccf4444b613f16082"
-    };
-
-    // Initialize Firebase
-    const app = firebase.initializeApp(firebaseConfig);
-    const auth = firebase.auth();
-
-    document.getElementById("login-box").addEventListener("submit", (e) => {
-      e.preventDefault(); 
-
-      const username = document.getElementById("username-field").value;
-      const password = document.getElementById("password-field").value;
-      const loginError = document.getElementById("login-error");
-
-      auth.signInWithEmailAndPassword(username, password)
-        .then((userCredential) => {
-          // User signed in successfully
-          const user = userCredential.user;
-          window.location.href = "dashboard.html"; // Redirect to dashboard.html
-        })
-        .catch((error) => {
-          // Handle login errors
-          loginError.innerText = "Invalid username or password. Please try again.";
-        });
-    });
-  </script>
+	<form id="login-container">
+		<h2>Login</h2>
+		<div class="input-container">
+			<label for="email">Email:</label>
+			<input id="email" type="text" name="email" required>
+		</div>
+		<div class="input-container">
+			<label for="password">Password:</label>
+			<input id="password" type="password" name="password" required>
+		</div>
+		<div class="button-container">
+			<button id="login-button" type="submit">Login</button>
+		</div>
+		<div class="error-container">
+			<p id="login-error"></p>
+		</div>
+	</form>
+	
+	<!-- Need to make adjustments to positioning -->
+	<!-- <div id="copyright">CS230 Group 7</div> -->
+	
+	<!-- Initialize Firebase -->
+	<script>
+	const firebaseConfig = {
+		apiKey: "AIzaSyCiaoHpxeFZWA4gb6NJzMGunj7ytNSChKY",
+		authDomain: "spotinsights.firebaseapp.com",
+		projectId: "spotinsights",
+		storageBucket: "spotinsights.appspot.com",
+		messagingSenderId: "293805645735",
+		appId: "1:293805645735:web:490f3ccf4444b613f16082"
+	};
+	firebase.initializeApp(firebaseConfig);
+	</script>
 </body>
-</html>
