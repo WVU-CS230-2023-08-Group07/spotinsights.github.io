@@ -106,5 +106,5 @@ function populateUI(profile) {
   .catch(error => {
     console.error(error);
   });
-  //window.location.href = 'callback/';
+  window.location.href = 'callback/';
 }
