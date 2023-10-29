@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    Spotinsights - Spotify Account Information
+  </title>
+  <script src="main.js" type="module"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: 'Varela Round', sans-serif;
+    }
+
+    #container {
+      width: 300px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    #logo {
+      display: block;
+      margin: 0 auto;
+      width: 150px;
+      float: left;
+      margin-left: 20px;
+    }
+
+    #logo img {
+      max-width: 150px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #1fd662ff;
+      border: none;
+      border-radius: 20px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      font-family: 'Varela Round', sans-serif;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    button:hover {
+      background-color: #45a049;
+      transform: scale(1.05);
+    }
+
+    #copyright {
+      color: gray;
+      font-size: 14px;
+      text-align: center;
+      margin-top: 800px;
+    }
+
+    #profile {
+      margin: 0 auto;
+      padding: 20px;
+      text-align: left;
+    }
+  </style>
+  <link rel="icon" type="image/png" href="../../assets/logoi.png">
+</head>
+
+<body>
+
+  <a id="logo" href="../../index.html">
+    <img src="../../assets/logo.png" alt="Logo">
+  </a>
+  <div id="container">
+    <h2>Spotify Account Information</h2>
+  
+  </div>
+  <section id="profile">
+    <h2>Logged in as <span id="displayName"></span></h2>
+    <span id="avatar"></span>
+    <p>User ID: <span id="id"></span></p>
+    <p>Email: <span id="email"></span></p>
+    <p>Spotify URI: <a id="uri" href="#"></a></p>
+    <p>Link: <a id="url" href="#"></a></p>
+    <p>Profile Image: <span id="imgUrl"></span></p>
+    <p>Current Song:</p>
+    <div id="spotifyEmbed"></div>
+  </section>
+  
+  </div>
+  <div id="copyright">CS230 Group 7</div>
+
+
+</body>
+
+</html>

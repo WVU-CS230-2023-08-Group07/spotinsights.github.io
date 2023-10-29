@@ -1,185 +1,94 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>
-    Spotinsights - Playlist Ranking
-  </title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
-  <style>
-    body {
-      background-color: black;
-      color: white;
-      font-family: 'Varela Round', sans-serif;
-      text-align: center;
-    }
-
-    #header {
-      font-size: 24px;
-      font-weight: bold;
-      color: #1fd662ff;
-      margin-top: 20px;
-    }
-
-    #container {
-      width: 700px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-
-    #logo {
-      display: block;
-      float: left;
-      width: 150px;
-    }
-
-    #logo img {
-      max-width: 150px;
-    }
-
-    #login-button,
-    #signup-button {
-      padding: 5px 10px;
-      background-color: #1D1D1D;
-      border: none;
-      border-radius: 20px;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
-      text-decoration: none;
-    }
-
-    #login-button {
-      float: right;
-
-      margin-right: 10px;
-    }
-
-    #signup-button {
-      float: right;
-
-      margin-right: 10px;
-    }
-
-    #ranking {
-      text-align: left;
-      margin-top: 20px;
-    }
-
-    .playlist-item {
-      margin-bottom: 10px;
-    }
-
-    .playlist-container {
-      background-color: #1D1D1D;
-      border-radius: 20px;
-      padding: 10px;
-      margin-bottom: 10px;
-    }
-
-    .like-container {
-      display: flex;
-      align-items: center;
-    }
-
-    #copyright {
-      color: gray;
-      font-size: 14px;
-      text-align: center;
-      margin-top: 700px;
-    }
-    .image-button {
-        display: inline-block;
-        background-image: url('assets/heart.png');
-        width: 24px;
-        height: 22px;
-        border: none;
-        cursor: pointer;
-      margin-right: 20px
-    }
-
-    .image-button:hover {
-        background-image: url('assets/green.png');
-    }
-  </style>
-  <link rel="icon" type="image/png" href="assets/logoi.png">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Spotinsights - Playlist Ranking</title>
+	
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+	
+	<link rel="stylesheet" href="playlists.css">
+	<link rel="icon" type="image/png" href="assets/logoi.png">
+	
+	<!-- JavaScript still unfinished -->
+	<!-- <script defer src="playlists.js"></script> -->
 </head>
-
 <body>
-  <a id="signup-button" href="signup.html">Sign Up</a>
-  <a id="login-button" href="login.html">Login</a>
-
-  <a id="logo" href="index.html">
-    <img src="assets/logo.png" alt="Logo">
-  </a>
-  <div id="container">
-
-    <h1 id="header">Playlist Ranking</h1>
-    <div id="ranking">
-      <div class="playlist-container">
-        <p>1.</p>
-        <iframe style="border-radius:12px"
-          src="https://open.spotify.com/embed/playlist/72yso3rgCFDAGjYHqdjPZe?utm_source=generator" width="100%"
-          height="152" frameBorder="1" allowfullscreen=""
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-        
-        <div class="like-container">
-          <div class="image-button"></div>
-          <p class="liked-count">Liked by: ___ users</p>
-        </div>
-      </div>
-      <div class="playlist-container">
-        <p>2.</p>
-        <iframe style="border-radius:12px"
-          src="https://open.spotify.com/embed/playlist/2aJur8sGGtP1LafNdZ90Ei?utm_source=generator" width="100%"
-          height="152" frameBorder="1" allowfullscreen=""
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-        <div class="like-container">
-          <div class="image-button"></div>
-          <p class="liked-count">Liked by: ___ users</p>
-        </div>
-      </div>
-      <div class="playlist-container">
-        <p>3.</p>
-        <iframe style="border-radius:12px"
-          src="https://open.spotify.com/embed/playlist/50OLgzDno01NNeTPyyro8X?utm_source=generator" width="100%"
-          height="152" frameBorder="1" allowfullscreen=""
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-        <div class="like-container">
-          <div class="image-button"></div>
-          <p class="liked-count">Liked by: ___ users</p>
-        </div>
-      </div>
-      <div class="playlist-container">
-        <p>4.</p>
-        <iframe style="border-radius:12px"
-          src="https://open.spotify.com/embed/playlist/0a2kRf1jDZ8hmXUqOj5U4C?utm_source=generator" width="100%"
-          height="152" frameBorder="1" allowfullscreen=""
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-        <div class="like-container">
-          <div class="image-button"></div>
-          <p class="liked-count">Liked by: ___ users</p>
-        </div>
-      </div>
-      <div class="playlist-container">
-        <p>5.</p>
-        <iframe style="border-radius:12px"
-          src="https://open.spotify.com/embed/playlist/37i9dQZF1DXb3m918yXHxA?utm_source=generator" width="100%"
-          height="152" frameBorder="1" allowfullscreen=""
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-        <div class="like-container">
-          <div class="image-button"></div>
-          <p class="liked-count">Liked by: ___ users</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div id="copyright">CS230 Group 7</div>
+	<a id="signup-button" href="signup.html">Sign Up</a>
+	<a id="login-button" href="login.html">Login</a>
+	
+	<a id="logo" href="index.html">
+		<img src="assets/logo.png" alt="Logo">
+	</a>
+	
+	<div id="container">
+		<h1 id="header">Playlist Ranking</h1>
+		
+		<div id="ranking">
+			<div class="playlist-container">
+				<p>1.</p>
+				<iframe style="border-radius:12px" 
+				src="https://open.spotify.com/embed/playlist/72yso3rgCFDAGjYHqdjPZe?utm_source=generator" 
+				width="100%" height="152" frameBorder="1" allowfullscreen="" 
+				allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+				<div class="like-container">
+					<div class="image-button"></div>
+					<p class="liked-count">Liked by: ___ users</p>
+				</div>
+			</div>
+			
+			<div class="playlist-container">
+				<p>2.</p>
+				<iframe style="border-radius:12px" 
+				src="https://open.spotify.com/embed/playlist/2aJur8sGGtP1LafNdZ90Ei?utm_source=generator" 
+				width="100%" height="152" frameBorder="1" allowfullscreen="" 
+				allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+				<div class="like-container">
+					<div class="image-button"></div>
+					<p class="liked-count">Liked by: ___ users</p>
+				</div>
+			</div>
+			
+			<div class="playlist-container">
+				<p>3.</p>
+				<iframe style="border-radius:12px" 
+				src="https://open.spotify.com/embed/playlist/50OLgzDno01NNeTPyyro8X?utm_source=generator" 
+				width="100%" height="152" frameBorder="1" allowfullscreen=""
+				allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+				<div class="like-container">
+					<div class="image-button"></div>
+					<p class="liked-count">Liked by: ___ users</p>
+				</div>
+			</div>
+			
+			<div class="playlist-container">
+				<p>4.</p>
+				<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0a2kRf1jDZ8hmXUqOj5U4C?utm_source=generator" 
+				width="100%" height="152" frameBorder="1" allowfullscreen=""
+				allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+				<div class="like-container">
+					<div class="image-button"></div>
+					<p class="liked-count">Liked by: ___ users</p>
+				</div>
+			</div>
+			
+			<div class="playlist-container">
+				<p>5.</p>
+				<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DXb3m918yXHxA?utm_source=generator"
+				width="100%" height="152" frameBorder="1" allowfullscreen=""
+				allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+				<div class="like-container">
+					<div class="image-button"></div>
+					<p class="liked-count">Liked by: ___ users</p>
+				</div>
+			</div>
+		</div>
+	
+	</div>
+	
+	<<!-- Need to make adjustments to positioning -->
+	<!-- <div id="copyright">CS230 Group 7</div> -->
 </body>
-
 </html>

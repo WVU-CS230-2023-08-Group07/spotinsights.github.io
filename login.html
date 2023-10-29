@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Spotinsights Login</title>
   <link rel="stylesheet" href="login-page.css">
-  <!-- Include Firebase SDK -->
+  <!-- Firebase SDK -->
   <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-firestore.js"></script>
@@ -29,7 +29,7 @@
     </form>   
   </main>
 
-  <!-- Initialize Firebase with your Firebase project configuration -->
+  <!-- Initialize Firebase -->
   <script>
     const firebaseConfig = {
       apiKey: "AIzaSyCiaoHpxeFZWA4gb6NJzMGunj7ytNSChKY",
@@ -50,7 +50,7 @@
     const auth = firebase.auth();
 
     document.getElementById("login-box").addEventListener("submit", (e) => {
-      e.preventDefault(); // Prevent the form submission
+      e.preventDefault(); 
 
       const username = document.getElementById("username-field").value;
       const password = document.getElementById("password-field").value;
