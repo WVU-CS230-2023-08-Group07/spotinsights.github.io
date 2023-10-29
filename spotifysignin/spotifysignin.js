@@ -101,6 +101,7 @@ function populateUI(profile) {
   .then(currentSongData => {
     song = currentSongData;
     localStorage.setItem("songURL", JSON.stringify(song.item.external_urls.spotify));
+    console.log(localStorage.getItem("songURL"));
   })
   .catch(error => {
     console.error(error);
