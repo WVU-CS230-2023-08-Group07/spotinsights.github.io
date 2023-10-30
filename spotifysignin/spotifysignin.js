@@ -95,9 +95,9 @@ async function fetchCurrentSong(token) {
   return result.json();
 }
 
-function populateUI(profile) {
+async function populateUI(profile) {
   localStorage.setItem("spotifyInfo", JSON.stringify(profile));
-  fetchCurrentSong(localStorage.getItem("accessToken"))
+  await fetchCurrentSong(localStorage.getItem("accessToken"))
   .then(currentSongData => {
     song = currentSongData;
     localStorage.setItem("songURL", JSON.stringify(song.item.external_urls.spotify));
