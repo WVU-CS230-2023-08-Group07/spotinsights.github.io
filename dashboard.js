@@ -1,6 +1,7 @@
 if (localStorage.getItem('spotifyInfo') !== null) {
   document.getElementById('login-button').style.display = 'none';
   document.getElementById('signup-button').style.display = 'none';
+  userProfile.style.display = 'block';
   const spotifyInfo = JSON.parse(localStorage.getItem('spotifyInfo'));
 
   const profileImageElement = document.getElementById('profile-image');
