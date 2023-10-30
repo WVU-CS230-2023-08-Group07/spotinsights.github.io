@@ -7,7 +7,9 @@ if (localStorage.getItem('spotifyInfo') !== null) {
 
   const profileImageElement = document.getElementById('profile-image');
   profileImageElement.src = spotifyInfo.images[1].url;
-
+  profileImageElement.style.display = 'block';
+  
   const displayNameElement = document.getElementById('display-name');
   displayNameElement.textContent = spotifyInfo.display_name;
+  displayNameElement.style.display = 'block';
 }
