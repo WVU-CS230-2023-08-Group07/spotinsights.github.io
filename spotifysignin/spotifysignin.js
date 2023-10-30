@@ -100,7 +100,7 @@ async function populateUI(profile) {
   await fetchCurrentSong(localStorage.getItem("accessToken"))
   .then(currentSongData => {
     song = currentSongData;
-    localStorage.setItem("songURL", JSON.stringify(song.item.external_urls.spotify));
+    localStorage.setItem("songURL", song.item.external_urls.spotify);
     console.log(localStorage.getItem("songURL"));
   })
   .catch(error => {
