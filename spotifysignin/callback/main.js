@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var urlParts = localStorage.getItem("songURL").split('/');
 
 
+  
   var spotifyTrackUrl = "https://open.spotify.com/embed/track/" + urlParts[4];
 
   const iframe = document.createElement('iframe');
