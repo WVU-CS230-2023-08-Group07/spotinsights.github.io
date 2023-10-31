@@ -1,13 +1,56 @@
 <!DOCTYPE html>
 <html>
-<head>
-<script async="true" src="./javascript/analytics.js"></script>
+	<head>
+		<title>Spotinsights - Analytics </title>
+		<link rel="icon" type="image/png" href="assets/logoi.png">
+	 	<script src="dashboard.js" type="module"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="analytics.css">
+   </head>
+	<script async="true" src="javascript/analytics.js"></script>
 	<title>Analytics</title>
 </head>
 <body>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+	<link rel="icon" type="image/png" href="assets/logoi.png">
 
-<h1>analytics</h1>
-<p>analytics page - date is <h4 id='date'></h4></p>
+	<!--
+		Page Header and Logo
+	-->
+	<div id="container"><img id="logo" src="assets/logo.png" alt="logo"></div>
+	<h2 class="section-heading">Analytics</h1>
 
+	<!--
+		Top X played songs code
+	-->
+	<div class="column-2 tile-1">
+		<h2 class="project-text">Top X Played Songs</h2>
+
+		<h2 class="song-heading">Top Played Song 1</h2>
+		<h2 class="song-heading">Top Played Song 2</h2>
+		<h2 class="song-heading">Top Played Song 3</h2>
+	</div>
+
+	<!--
+		Recommended Tracks Div
+	-->
+	<div class="column-2 tile-1">
+		<h2 class="project-text">Recommended Songs</h2>
+
+		<h2 class="song-heading">Recommended Song 1</h2>
+		<h2 class="song-heading">Recommended Song 2</h2>
+		<h2 class="song-heading">Recommended Song 3</h2>
+
+		<a id="create-playlist">Create Playlist</a>
+	</div>
+
+	<!--
+		Copyright
+	-->
+	<div id="copyright">CS230 Group 9</div>
 </body>
 </html>
