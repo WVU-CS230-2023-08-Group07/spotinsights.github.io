@@ -5,8 +5,8 @@ body {
 	text-align: center;
 }
 
-#login-button,
-#signup-button {
+#signup-button,
+#login-button {
 	padding: 5px 10px;
 	background-color: #1D1D1D;
 	border: none;
@@ -16,11 +16,11 @@ body {
 	cursor: pointer;
 	text-decoration: none;
 }
-#login-button {
+#signup-button {
 	float: right;
 	margin-right: 10px;
 }
-#signup-button {
+#login-button {
 	float: right;
 	margin-right: 10px;
 }
@@ -81,9 +81,11 @@ body {
 	background-image: url('assets/green.png');
 }
 
-#copyright {
+#copyright {	
+	position: fixed;
+	width: 100%;
+	bottom: 0%;
 	color: gray;
 	font-size: 14px;
 	text-align: center;
-	margin-top: 700px;
 }
