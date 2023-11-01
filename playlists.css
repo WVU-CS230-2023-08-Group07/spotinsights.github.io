@@ -5,17 +5,8 @@ body {
 	text-align: center;
 }
 
-#logo {
-	display: block;
-	float: left;
-	width: 150px;
-}
-#logo img {
-	max-width: 150px;
-}
-
-#login-button,
-#signup-button {
+#signup-button,
+#login-button {
 	padding: 5px 10px;
 	background-color: #1D1D1D;
 	border: none;
@@ -25,13 +16,22 @@ body {
 	cursor: pointer;
 	text-decoration: none;
 }
+#signup-button {
+	float: right;
+	margin-right: 10px;
+}
 #login-button {
 	float: right;
 	margin-right: 10px;
 }
-#signup-button {
-	float: right;
-	margin-right: 10px;
+
+#logo {
+	display: block;
+	float: left;
+	width: 150px;
+}
+#logo img {
+	max-width: 150px;
 }
 
 #container {
