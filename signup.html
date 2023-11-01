@@ -4,16 +4,23 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Spotinsights - Sign Up</title>
+	<link rel="icon" type="image/png" href="assets/logoi.png">
 	
+	<!-- Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+
+	<!-- Firebase SDK -->
+	<script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-firestore.js"></script>
 	
+	<!-- CSS Stylesheets -->
 	<link rel="stylesheet" href="signup.css">
-	<link rel="icon" type="image/png" href="assets/logoi.png">
 	
-	<!-- JavaScript still unfinished -->
-	<!-- <script defer src="signup.js"></script> -->
+	<!-- JavaScript -->
+	<script defer src="signup.js"></script>
 </head>
 <body> 
 	<a id="logo" href="index.html">
@@ -23,8 +30,8 @@
 	<form id="signup-container">
 		<h2>Sign Up</h2>
 		<div class="input-container">
-			<label for="username">Username:</label>
-			<input id="username" type="text" name="username" required>
+			<label for="email">Email:</label>
+			<input id="email" type="text" name="email" required>
 		</div>
 		<div class="input-container">
 			<label for="password">Password:</label>
@@ -42,7 +49,18 @@
 		</div>
 	</form>
 	
-	<!-- Need to make adjustments to positioning -->
-	<!-- <div id="copyright">CS230 Group 7</div> -->
+	<div id="copyright">CS230 Group 7</div>
+	
+	<!-- Initialize Firebase -->
+	<script>
+	var firebaseConfig = {
+		apiKey: 'AIzaSyCiaoHpxeFZWA4gb6NJzMGunj7ytNSChKY',
+		authDomain: 'spotinsights.firebaseapp.com',
+		projectId: 'spotinsights',
+		storageBucket: 'spotinsights.appspot.com',
+		messagingSenderId: '293805645735',
+		appId: '1:293805645735:web:490f3ccf4444b613f16082'
+	};
+	firebase.initializeApp(firebaseConfig);
+	</script>
 </body>
-</html>
