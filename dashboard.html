@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<!-- <script src="js/logincheck.js" type="module"></script> -->
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Spotinsights - Dashboard</title>
@@ -19,25 +18,65 @@
 	
 	<!-- CSS Stylesheets -->
 	<link rel="stylesheet" href="css/dashboard.css">
+	<link rel="stylesheet" href="css/friendsList.css">
 	
 	<!-- JavaScript -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-	<script src="js/dashboard.js" type="module"></script>
+	<script src="js/dashboard.js"></script>
+	<script src="js/friendsList.js"></script>
+	<!-- <script src="js/logincheck.js" type="module"></script> -->
 </head>
 <body>
-	<a id="signup-button" href="signup.html">Sign Up</a>
-	<a id="login-button" href="login.html">Login</a>
-	
-	<a href='./spotifysignin/callback'> 
-		<div id="user-profile">
-			<img id="profile-image" src="" alt="Profile Image">
-			<div id="display-name"></div>
-		</div>
-	</a>
-	
-	<div id="container">
+	<div id="logo-container">
 		<img id="logo" src="assets/logo.png" alt="Logo" />
 	</div>
+	
+	<div id="friends-list" style="left: -250px;">
+		<ul>
+			<li>
+				<img src="friend1.jpg" alt="Friend 1">
+				<div class="info">
+					<h3>Friend 1</h3>
+					<p>Username: @friend1</p>
+					<p>Song: Song Title 1</p>
+				</div>
+			</li>
+			<li>
+				<img src="friend2.jpg" alt="Friend 2">
+				<div class="info">
+					<h3>Friend 2</h3>
+					<p>Username: @friend2</p>
+					<p>Song: Song Title 2</p>
+				</div>
+			</li>
+			<li>
+				<img src="friend3.jpg" alt="Friend 3">
+				<div class="info">
+					<h3>Friend 3</h3>
+					<p>Username: @friend3</p>
+					<p>Song: Song Title 3</p>
+				</div>
+			</li>
+			<!-- Area to add more friends --> 
+		</ul> 
+	</div>
+	<div id="content">
+		<div id="toggle-sidebar" onclick="toggleSidebar()">☰</div>
+		
+		<!-- Main content area -->
+		
+		<div id="auth-buttons">
+			<a id="signup-button" href="signup.html">Sign Up</a>
+			<a id="login-button" href="login.html">Login</a>
+		</div>
+	</div>
+	
+	<a href='./spotifysignin/callback'> 
+			<div id="user-profile">
+				<img id="profile-image" src="" alt="Profile Image">
+				<div id="display-name"></div>
+			</div>
+		</a>
 	
 	<h2 class="section-heading">Dashboard</h2>
 	<div class="column-2 tile-1" onclick="window.location.href = 'playlists.html';">
