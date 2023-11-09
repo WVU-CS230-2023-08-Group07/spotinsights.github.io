@@ -5,6 +5,31 @@ body {
 	text-align: center;
 }
 
+#logo-container {
+	position: fixed;
+	width: 99%;
+	top: 1%;
+}
+#logo-container a {
+	display: block;
+	margin: 0 auto;
+	width: 150px;
+}
+#logo {
+	width: 150px;
+}
+
+#content {
+	display: flex;
+	justify-content: flex-end;
+}
+
+#auth-buttons {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
 #signup-button,
 #login-button {
 	padding: 5px 10px;
@@ -18,20 +43,10 @@ body {
 }
 #signup-button {
 	float: right;
-	margin-right: 10px;
 }
 #login-button {
 	float: right;
 	margin-right: 10px;
-}
-
-#logo {
-	display: block;
-	float: left;
-	width: 150px;
-}
-#logo img {
-	max-width: 150px;
 }
 
 #container {
@@ -70,7 +85,7 @@ body {
 
 .image-button {
 	display: inline-block;
-	background-image: url('assets/heart.png');
+	background-image: url('../assets/heart.png');
 	width: 24px;
 	height: 22px;
 	border: none;
@@ -78,12 +93,12 @@ body {
 	margin-right: 20px
 }
 .image-button:hover {
-	background-image: url('assets/green.png');
+	background-image: url('../assets/green.png');
 }
 
 #copyright {	
 	position: fixed;
-	width: 100%;
+	width: 99%;
 	bottom: 0%;
 	color: gray;
 	font-size: 14px;

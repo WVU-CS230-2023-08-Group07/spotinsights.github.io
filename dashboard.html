@@ -19,6 +19,7 @@
 	<!-- CSS Stylesheets -->
 	<link rel="stylesheet" href="css/dashboard.css">
 	<link rel="stylesheet" href="css/friendsList.css">
+	<link rel="stylesheet" href="css/scrollbar.css">
 	
 	<!-- JavaScript -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
@@ -28,13 +29,15 @@
 </head>
 <body>
 	<div id="logo-container">
-		<img id="logo" src="assets/logo.png" alt="Logo" />
+		<a href="index.html">
+			<img id="logo" src="assets/logo.png" alt="Logo" />
+		</a>
 	</div>
 	
 	<div id="friends-list" style="left: -250px;">
 		<ul>
 			<li>
-				<img src="friend1.jpg" alt="Friend 1">
+				<img src="" alt="Friend 1">
 				<div class="info">
 					<h3>Friend 1</h3>
 					<p>Username: @friend1</p>
@@ -42,7 +45,7 @@
 				</div>
 			</li>
 			<li>
-				<img src="friend2.jpg" alt="Friend 2">
+				<img src="" alt="Friend 2">
 				<div class="info">
 					<h3>Friend 2</h3>
 					<p>Username: @friend2</p>
@@ -50,7 +53,7 @@
 				</div>
 			</li>
 			<li>
-				<img src="friend3.jpg" alt="Friend 3">
+				<img src="" alt="Friend 3">
 				<div class="info">
 					<h3>Friend 3</h3>
 					<p>Username: @friend3</p>
@@ -72,11 +75,11 @@
 	</div>
 	
 	<a href='./spotifysignin/callback'> 
-			<div id="user-profile">
-				<img id="profile-image" src="" alt="Profile Image">
-				<div id="display-name"></div>
-			</div>
-		</a>
+		<div id="user-profile">
+			<img id="profile-image" src="" alt="Profile Image">
+			<div id="display-name"></div>
+		</div>
+	</a>
 	
 	<h2 class="section-heading">Dashboard</h2>
 	<div class="column-2 tile-1" onclick="window.location.href = 'playlists.html';">

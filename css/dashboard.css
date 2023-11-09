@@ -6,12 +6,15 @@ body {
 
 #logo-container {
 	position: fixed;
-	width: 100%;
+	width: 99%;
 	top: 1%;
 }
-#logo {
+#logo-container a {
 	display: block;
 	margin: 0 auto;
+	width: 150px;
+}
+#logo {
 	width: 150px;
 }
 
@@ -115,7 +118,7 @@ body {
 
 #copyright {
 	position: fixed;
-	width: 100%;
+	width: 99%;
 	bottom: 0%;
 	color: gray;
 	font-size: 14px;

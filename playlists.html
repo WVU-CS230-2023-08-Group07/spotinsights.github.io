@@ -19,17 +19,63 @@
 	
 	<!-- CSS Stylesheets -->
 	<link rel="stylesheet" href="css/playlists.css">
+	<link rel="stylesheet" href="css/friendsList.css">
+	<link rel="stylesheet" href="css/scrollbar.css">
 	
 	<!-- JavaScript
 	<script defer src="js/playlists.js"></script> -->
+	<script src="js/friendsList.js"></script>
 </head>
 <body>
-	<a id="signup-button" href="signup.html">Sign Up</a>
-	<a id="login-button" href="login.html">Login</a>
+	<div id="logo-container">
+		<a href="index.html">
+			<img id="logo" src="assets/logo.png" alt="Logo" />
+		</a>
+	</div>
 	
-	<a id="logo" href="index.html">
+	<!-- <a id="logo" href="index.html">
 		<img src="assets/logo.png" alt="Logo">
-	</a>
+	</a> -->
+	
+	<div id="friends-list" style="left: -250px;">
+		<ul>
+			<li>
+				<img src="" alt="Friend 1">
+				<div class="info">
+					<h3>Friend 1</h3>
+					<p>Username: @friend1</p>
+					<p>Song: Song Title 1</p>
+				</div>
+			</li>
+			<li>
+				<img src="" alt="Friend 2">
+				<div class="info">
+					<h3>Friend 2</h3>
+					<p>Username: @friend2</p>
+					<p>Song: Song Title 2</p>
+				</div>
+			</li>
+			<li>
+				<img src="" alt="Friend 3">
+				<div class="info">
+					<h3>Friend 3</h3>
+					<p>Username: @friend3</p>
+					<p>Song: Song Title 3</p>
+				</div>
+			</li>
+			<!-- Area to add more friends --> 
+		</ul> 
+	</div>
+	<div id="content">
+		<div id="toggle-sidebar" onclick="toggleSidebar()">☰</div>
+		
+		<!-- Main content area -->
+		
+		<div id="auth-buttons">
+			<a id="signup-button" href="signup.html">Sign Up</a>
+			<a id="login-button" href="login.html">Login</a>
+		</div>
+	</div>
 	
 	<div id="container">
 		<h1 id="header">Playlist Ranking</h1>
