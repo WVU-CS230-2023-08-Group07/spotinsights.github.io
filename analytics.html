@@ -19,17 +19,64 @@
 	
 	<!-- CSS Stylesheets -->
 	<link rel="stylesheet" href="css/analytics.css">
+	<link rel="stylesheet" href="css/friendsList.css">
+	<link rel="stylesheet" href="css/scrollbar.css">
 	
 	<!-- JavaScript -->
-	<script src="js/dashboard.js" type="module"></script>
-	<script src="js/analytics.js" type="module"></script>
+	<script src="js/analytics.js"></script>
+	<script src="js/friendsList.js"></script>
+	<!-- <script src="js/dashboard.js" type="module"></script> -->
 	<!-- <script src="js/chart.js" type="module"></script> -->
 </head>
 <body>
-	<!-- Page Header and Logo -->
-	<div id="container">
-		<img src="assets/logo.png" alt="Logo">
+	<!-- Logo, Sidebar, and User Auth -->
+	<div id="logo-container">
+		<a href="index.html">
+			<img id="logo" src="assets/logo.png" alt="Logo" />
+		</a>
 	</div>
+	
+	<div id="friends-list" style="left: -250px;">
+		<ul>
+			<li>
+				<img src="" alt="Friend 1">
+				<div class="info">
+					<h3>Friend 1</h3>
+					<p>Username: @friend1</p>
+					<p>Song: Song Title 1</p>
+				</div>
+			</li>
+			<li>
+				<img src="" alt="Friend 2">
+				<div class="info">
+					<h3>Friend 2</h3>
+					<p>Username: @friend2</p>
+					<p>Song: Song Title 2</p>
+				</div>
+			</li>
+			<li>
+				<img src="" alt="Friend 3">
+				<div class="info">
+					<h3>Friend 3</h3>
+					<p>Username: @friend3</p>
+					<p>Song: Song Title 3</p>
+				</div>
+			</li>
+			<!-- Area to add more friends --> 
+		</ul> 
+	</div>
+	<div id="content">
+		<div id="toggle-sidebar" onclick="toggleSidebar()">☰</div>
+		
+		<!-- Main content area -->
+		
+		<div id="auth-buttons">
+			<a id="signup-button" href="signup.html">Sign Up</a>
+			<a id="login-button" href="login.html">Login</a>
+		</div>
+	</div>
+	
+	<!-- Heading -->
 	<h2 class="section-heading">Analytics</h1>
 	
 	<!-- Top X played songs code -->
