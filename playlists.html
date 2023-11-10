@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<!-- <script src="js/logincheck.js" type="module"></script> -->
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Spotinsights - Playlist Ranking</title>
@@ -19,24 +18,23 @@
 	
 	<!-- CSS Stylesheets -->
 	<link rel="stylesheet" href="css/playlists.css">
-	<link rel="stylesheet" href="css/friendsList.css">
 	<link rel="stylesheet" href="css/scrollbar.css">
+	<link rel="stylesheet" href="css/friendsList.css">
 	
 	<!-- JavaScript
 	<script defer src="js/playlists.js"></script> -->
 	<script src="js/friendsList.js"></script>
+	<!-- <script src="js/logincheck.js" type="module"></script> -->
 </head>
 <body>
+	<!-- Logo -->
 	<div id="logo-container">
 		<a href="index.html">
 			<img id="logo" src="assets/logo.png" alt="Logo" />
 		</a>
 	</div>
 	
-	<!-- <a id="logo" href="index.html">
-		<img src="assets/logo.png" alt="Logo">
-	</a> -->
-	
+	<!-- Sidebar / Friends List -->
 	<div id="friends-list" style="left: -250px;">
 		<ul>
 			<li>
@@ -66,27 +64,28 @@
 			<!-- Area to add more friends --> 
 		</ul> 
 	</div>
-	<div id="content">
-		<div id="toggle-sidebar" onclick="toggleSidebar()">☰</div>
-		
-		<!-- Main content area -->
-		
+	
+	<!-- Navbar / Topbar -->
+	<div id="navbar-container">
+		<div id="toggle-sidebar" onclick="toggleSidebar()">☰</div>		
 		<div id="auth-buttons">
 			<a id="signup-button" href="signup.html">Sign Up</a>
 			<a id="login-button" href="login.html">Login</a>
 		</div>
 	</div>
 	
-	<div id="container">
-		<h1 id="header">Playlist Ranking</h1>
-		
-		<div id="ranking">
+	<!-- Page Body Content -->
+	<div id="body-container">
+		<h1 id="section-heading">Playlist Ranking</h1>	
+		<div id="ranking-container">
+			
 			<div class="playlist-container">
 				<p>1.</p>
 				<iframe style="border-radius:12px" 
-				src="https://open.spotify.com/embed/playlist/72yso3rgCFDAGjYHqdjPZe?utm_source=generator" 
-				width="100%" height="152" frameBorder="1" allowfullscreen="" 
-				allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+					src="https://open.spotify.com/embed/playlist/72yso3rgCFDAGjYHqdjPZe?utm_source=generator" 
+					width="100%" height="152" frameBorder="1" allowfullscreen="" 
+					allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+				</iframe>
 				<div class="like-container">
 					<div class="image-button"></div>
 					<p class="liked-count">Liked by: ___ users</p>
@@ -96,9 +95,10 @@
 			<div class="playlist-container">
 				<p>2.</p>
 				<iframe style="border-radius:12px" 
-				src="https://open.spotify.com/embed/playlist/2aJur8sGGtP1LafNdZ90Ei?utm_source=generator" 
-				width="100%" height="152" frameBorder="1" allowfullscreen="" 
-				allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+					src="https://open.spotify.com/embed/playlist/2aJur8sGGtP1LafNdZ90Ei?utm_source=generator" 
+					width="100%" height="152" frameBorder="1" allowfullscreen="" 
+					allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+				</iframe>
 				<div class="like-container">
 					<div class="image-button"></div>
 					<p class="liked-count">Liked by: ___ users</p>
@@ -108,9 +108,10 @@
 			<div class="playlist-container">
 				<p>3.</p>
 				<iframe style="border-radius:12px" 
-				src="https://open.spotify.com/embed/playlist/50OLgzDno01NNeTPyyro8X?utm_source=generator" 
-				width="100%" height="152" frameBorder="1" allowfullscreen=""
-				allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+					src="https://open.spotify.com/embed/playlist/50OLgzDno01NNeTPyyro8X?utm_source=generator" 
+					width="100%" height="152" frameBorder="1" allowfullscreen=""
+					allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+				</iframe>
 				<div class="like-container">
 					<div class="image-button"></div>
 					<p class="liked-count">Liked by: ___ users</p>
@@ -119,9 +120,11 @@
 			
 			<div class="playlist-container">
 				<p>4.</p>
-				<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0a2kRf1jDZ8hmXUqOj5U4C?utm_source=generator" 
-				width="100%" height="152" frameBorder="1" allowfullscreen=""
-				allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+				<iframe style="border-radius:12px"
+					src="https://open.spotify.com/embed/playlist/0a2kRf1jDZ8hmXUqOj5U4C?utm_source=generator"
+					width="100%" height="152" frameBorder="1" allowfullscreen=""
+					allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+				</iframe>
 				<div class="like-container">
 					<div class="image-button"></div>
 					<p class="liked-count">Liked by: ___ users</p>
@@ -130,18 +133,21 @@
 			
 			<div class="playlist-container">
 				<p>5.</p>
-				<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DXb3m918yXHxA?utm_source=generator"
-				width="100%" height="152" frameBorder="1" allowfullscreen=""
-				allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+				<iframe style="border-radius:12px"
+					src="https://open.spotify.com/embed/playlist/37i9dQZF1DXb3m918yXHxA?utm_source=generator"
+					width="100%" height="152" frameBorder="1" allowfullscreen=""
+					allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+				</iframe>
 				<div class="like-container">
 					<div class="image-button"></div>
 					<p class="liked-count">Liked by: ___ users</p>
 				</div>
 			</div>
+			
 		</div>
-	
 	</div>
 	
+	<!-- Copyright -->
 	<div id="copyright">CS230 Group 7</div>
 </body>
 </html>

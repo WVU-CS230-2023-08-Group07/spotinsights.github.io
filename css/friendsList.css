@@ -1,7 +1,8 @@
+/* CSS Stylesheet for Friends List / Sidebar */
+
 #friends-list {
 	width: 250px;
 	background-color: #000;
-	color: #fff;
 	position: fixed;
 	top: 0;
 	left: -250px; /* Hides sidebar */
@@ -33,7 +34,8 @@
 	flex: 1;
 }
 
-#friends-list h3, #friends-list p {
+#friends-list h3,
+#friends-list p {
 	margin: 0;
 }
 
