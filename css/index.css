@@ -2,24 +2,19 @@ body {
 	background-color: black;
 	color: white;
 	font-family: 'Varela Round', sans-serif;
-	text-align: center;
 }
 
-#container {
-	width: 300px;
-	margin: 0 auto;
-	padding: 20px;
-}
-
+/* Logo components */
 #logo {
 	display: block;
 	width: 200px;
-	margin: 0 auto;
+	margin: 0 auto; /* Top+Bottom Left+Right */
 }
 
+/* User auth components */
 #login-button,
 #signup-button {
-	padding: 10px 20px;
+	padding: 10px 20px; /* Top+Bottom Left+Right */
 	background-color: #1D1D1D;
 	border: none;
 	border-radius: 20px;
@@ -37,6 +32,13 @@ body {
 	transform: scale(1.05);
 }
 
+/* Page body components */
+#body-container {
+	width: 300px;
+	margin: 0 auto; /* Top+Bottom Left+Right */
+	padding: 20px;
+	text-align: center;
+}
 #testing-text {
 	color: gray;
 	font-size: 14px;
@@ -45,7 +47,7 @@ body {
 	margin-top: 20px;
 }
 .additional-button {
-	padding: 10px 20px;
+	padding: 10px 20px; /* Top+Bottom Left+Right */
 	background-color: #1D1D1D;
 	border: none;
 	border-radius: 20px;
@@ -62,9 +64,10 @@ body {
 	transform: scale(1.05);
 }
 
+/* Copyright */
 #copyright {
 	position: fixed;
-	width: 100%;
+	width: 99%;
 	bottom: 0%;
 	color: gray;
 	font-size: 14px;

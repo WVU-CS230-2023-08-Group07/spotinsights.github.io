@@ -2,12 +2,32 @@ body {
 	background-color: black;
 	color: white;
 	font-family: 'Varela Round', sans-serif;
-	text-align: center;
 }
 
+/* Logo components */
+#logo-container {
+	position: fixed;
+	width: 99%;
+	top: 1%;
+}
+#logo-container a {
+	display: block;
+	margin: 0 auto; /* Top+Bottom Left+Right */
+	width: 150px;
+}
+#logo {
+	width: 150px;
+}
+
+/* User auth components */
+#auth-buttons {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
 #signup-button,
 #login-button {
-	padding: 5px 10px;
+	padding: 5px 10px; /* Top+Bottom Left+Right */
 	background-color: #1D1D1D;
 	border: none;
 	border-radius: 20px;
@@ -18,59 +38,49 @@ body {
 }
 #signup-button {
 	float: right;
-	margin-right: 10px;
 }
 #login-button {
 	float: right;
 	margin-right: 10px;
 }
 
-#logo {
-	display: block;
-	float: left;
-	width: 150px;
-}
-#logo img {
-	max-width: 150px;
+/* Navbar / topbar */
+#navbar-container {
+	display: flex;
+	justify-content: flex-end;
 }
 
-#container {
+/* Page body components */
+#body-container {
 	width: 700px;
-	margin: 0 auto;
+	margin: 0 auto; /* Top+Bottom Left+Right */
 	padding: 20px;
 }
-
-#header {
-	font-size: 24px;
-	font-weight: bold;
-	color: #1fd662ff;
-	margin-top: 20px;
+#section-heading {
+	text-align: left;
+	margin: 75px 0px 60px 0px; /* Top Right Bottom Left */
+	font-size: 35px;
 }
-
-#ranking {
+#ranking-container {
 	text-align: left;
 	margin-top: 20px;
 }
-
 .playlist-container {
 	background-color: #1D1D1D;
 	border-radius: 20px;
 	padding: 10px;
 	margin-bottom: 10px;
 }
-
 .playlist-item {
 	margin-bottom: 10px;
 }
-
 .like-container {
 	display: flex;
 	align-items: center;
 }
-
 .image-button {
 	display: inline-block;
-	background-image: url('assets/heart.png');
+	background-image: url('../assets/heart.png');
 	width: 24px;
 	height: 22px;
 	border: none;
@@ -78,12 +88,13 @@ body {
 	margin-right: 20px
 }
 .image-button:hover {
-	background-image: url('assets/green.png');
+	background-image: url('../assets/green.png');
 }
 
+/* Copyright */
 #copyright {	
 	position: fixed;
-	width: 100%;
+	width: 99%;
 	bottom: 0%;
 	color: gray;
 	font-size: 14px;

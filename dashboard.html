@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<!-- <script src="js/logincheck.js" type="module"></script> -->
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Spotinsights - Dashboard</title>
@@ -19,15 +18,64 @@
 	
 	<!-- CSS Stylesheets -->
 	<link rel="stylesheet" href="css/dashboard.css">
+	<link rel="stylesheet" href="css/scrollbar.css">
+	<link rel="stylesheet" href="css/friendsList.css">
 	
 	<!-- JavaScript -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-	<script src="js/dashboard.js" type="module"></script>
+	<script src="js/dashboard.js"></script>
+	<script src="js/friendsList.js"></script>
+	<!-- <script src="js/logincheck.js" type="module"></script> -->
 </head>
 <body>
-	<a id="signup-button" href="signup.html">Sign Up</a>
-	<a id="login-button" href="login.html">Login</a>
+	<!-- Logo -->
+	<div id="logo-container">
+		<a href="index.html">
+			<img id="logo" src="assets/logo.png" alt="Logo" />
+		</a>
+	</div>
 	
+	<!-- Sidebar / Friends List -->
+	<div id="friends-list" style="left: -250px;">
+		<ul>
+			<li>
+				<img src="" alt="Friend 1">
+				<div class="info">
+					<h3>Friend 1</h3>
+					<p>Username: @friend1</p>
+					<p>Song: Song Title 1</p>
+				</div>
+			</li>
+			<li>
+				<img src="" alt="Friend 2">
+				<div class="info">
+					<h3>Friend 2</h3>
+					<p>Username: @friend2</p>
+					<p>Song: Song Title 2</p>
+				</div>
+			</li>
+			<li>
+				<img src="" alt="Friend 3">
+				<div class="info">
+					<h3>Friend 3</h3>
+					<p>Username: @friend3</p>
+					<p>Song: Song Title 3</p>
+				</div>
+			</li>
+			<!-- Area to add more friends --> 
+		</ul> 
+	</div>
+	
+	<!-- Navbar / Topbar -->
+	<div id="navbar-container">
+		<div id="toggle-sidebar" onclick="toggleSidebar()">☰</div>
+		<div id="auth-buttons">
+			<a id="signup-button" href="signup.html">Sign Up</a>
+			<a id="login-button" href="login.html">Login</a>
+		</div>
+	</div>
+	
+	<!-- Spotify Auth Profile -->
 	<a href='./spotifysignin/callback'> 
 		<div id="user-profile">
 			<img id="profile-image" src="" alt="Profile Image">
@@ -35,28 +83,28 @@
 		</div>
 	</a>
 	
-	<div id="container">
-		<img id="logo" src="assets/logo.png" alt="Logo" />
-	</div>
-	
-	<h2 class="section-heading">Dashboard</h2>
+	<!-- Page Body Content -->
+	<h1 id="section-heading">Dashboard</h1>
 	<div class="column-2 tile-1" onclick="window.location.href = 'playlists.html';">
 		<h2 class="project-text">Playlists</h2>
 		<iframe style="border-radius:12px"
-		src="https://open.spotify.com/embed/playlist/178powjcjTjaDlhlo1QUj2?utm_source=generator&theme=0"
-		width="100%" height="199" frameBorder="0" allowfullscreen=""
-		allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-	</div>
-	
-	
+			src="https://open.spotify.com/embed/playlist/178powjcjTjaDlhlo1QUj2?utm_source=generator&theme=0"
+			width="100%" height="199" frameBorder="0" allowfullscreen=""
+			allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+		</iframe>
+	</div>	
 	<div class="column-2 tile-2" onclick="window.location.href = 'analytics.html';">
 		<h2 class="project-text">Analytics</h2>
-
-		<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2TmUt0ofWMa02MdYkKhK4C?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+		<iframe style="border-radius:12px"
+			src="https://open.spotify.com/embed/track/2TmUt0ofWMa02MdYkKhK4C?utm_source=generator&theme=0"
+			width="100%" height="152" frameBorder="0" allowfullscreen=""
+			allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+		</iframe>
 		<!-- Filler for Analytics chart preview -->
 		<!--  <canvas id="myChart" style="width:100%;max-width:700px"></canvas>-->
 	</div>
 	
+	<!-- Copyright -->
 	<div id="copyright">CS230 Group 7</div>
 </body>
 </html>

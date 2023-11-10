@@ -1,0 +1,49 @@
+/* CSS Stylesheet for Friends List / Sidebar */
+
+#friends-list {
+	width: 250px;
+	background-color: #000;
+	position: fixed;
+	top: 0;
+	left: -250px; /* Hides sidebar */
+	height: 100%;
+	overflow: auto;
+	transition: left 0.3s;
+}
+
+#friends-list ul {
+	list-style: none;
+	padding: 0;
+}
+
+#friends-list li {
+	display: flex;
+	align-items: center;
+	padding: 10px;
+	border-bottom: 1px solid #8aff8a;
+}
+
+#friends-list img {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	margin-right: 10px;
+}
+
+#friends-list .info {
+	flex: 1;
+}
+
+#friends-list h3,
+#friends-list p {
+	margin: 0;
+}
+
+#toggle-sidebar {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	cursor: pointer;
+	color: #8aff8a; /* Light green */
+	font-size: 24px;
+}

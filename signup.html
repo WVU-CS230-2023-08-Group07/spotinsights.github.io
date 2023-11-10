@@ -18,17 +18,22 @@
 	
 	<!-- CSS Stylesheets -->
 	<link rel="stylesheet" href="css/signup.css">
+	<link rel="stylesheet" href="css/scrollbar.css">
 	
 	<!-- JavaScript -->
 	<script defer src="js/signup.js"></script>
 </head>
 <body> 
-	<a id="logo" href="index.html">
-		<img src="assets/logo.png" alt="Logo">
-	</a>
-
+	<!-- Logo -->
+	<div id="logo-container">
+		<a href="index.html">
+			<img id="logo" src="assets/logo.png" alt="Logo" />
+		</a>
+	</div>
+	
+	<!-- Page Body Content -->
 	<form id="signup-container">
-		<h2>Sign Up</h2>
+		<h1 id="section-heading">Sign Up</h1>
 		<div class="input-container">
 			<label for="email">Email:</label>
 			<input id="email" type="text" name="email" required>
@@ -49,6 +54,7 @@
 		</div>
 	</form>
 	
+	<!-- Copyright -->
 	<div id="copyright">CS230 Group 7</div>
 	
 	<!-- Initialize Firebase -->

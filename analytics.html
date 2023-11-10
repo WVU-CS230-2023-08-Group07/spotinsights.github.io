@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<!-- <script src="js/logincheck.js" type="module"></script> -->
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Spotinsights - Analytics </title>
@@ -19,38 +18,104 @@
 	
 	<!-- CSS Stylesheets -->
 	<link rel="stylesheet" href="css/analytics.css">
+	<link rel="stylesheet" href="css/scrollbar.css">
+	<link rel="stylesheet" href="css/friendsList.css">
 	
 	<!-- JavaScript -->
-	<script src="js/dashboard.js" type="module"></script>
-	<script src="js/analytics.js" type="module"></script>
+	<script src="js/analytics.js"></script>
+	<script src="js/friendsList.js"></script>
+	<!-- <script src="js/dashboard.js" type="module"></script> -->
 	<!-- <script src="js/chart.js" type="module"></script> -->
+	<!-- <script src="js/logincheck.js" type="module"></script> -->
 </head>
 <body>
-	<!-- Page Header and Logo -->
-	<div id="container">
-		<img src="assets/logo.png" alt="Logo">
+	<!-- Logo -->
+	<div id="logo-container">
+		<a href="index.html">
+			<img id="logo" src="assets/logo.png" alt="Logo" />
+		</a>
 	</div>
-	<h2 class="section-heading">Analytics</h1>
 	
+	<!-- Sidebar / Friends List -->
+	<div id="friends-list" style="left: -250px;">
+		<ul>
+			<li>
+				<img src="" alt="Friend 1">
+				<div class="info">
+					<h3>Friend 1</h3>
+					<p>Username: @friend1</p>
+					<p>Song: Song Title 1</p>
+				</div>
+			</li>
+			<li>
+				<img src="" alt="Friend 2">
+				<div class="info">
+					<h3>Friend 2</h3>
+					<p>Username: @friend2</p>
+					<p>Song: Song Title 2</p>
+				</div>
+			</li>
+			<li>
+				<img src="" alt="Friend 3">
+				<div class="info">
+					<h3>Friend 3</h3>
+					<p>Username: @friend3</p>
+					<p>Song: Song Title 3</p>
+				</div>
+			</li>
+			<!-- Area to add more friends --> 
+		</ul> 
+	</div>
+	
+	<!-- Navbar / Topbar -->
+	<div id="navbar-container">
+		<div id="toggle-sidebar" onclick="toggleSidebar()">☰</div>
+		<div id="auth-buttons">
+			<a id="signup-button" href="signup.html">Sign Up</a>
+			<a id="login-button" href="login.html">Login</a>
+		</div>
+	</div>
+	
+	<!-- Page Body Content -->
+	<h1 id="section-heading">Analytics</h1>
 	<!-- Top X played songs code -->
 	<div class="column-2 tile-1">
 		<h2 class="project-text">Top 3 Played Songs</h2>
-
-		<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2TmUt0ofWMa02MdYkKhK4C?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>		
-		<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4YLXjoYmRGIXstTLtloHf2?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-		<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/23uNiVgsIgoHC7eLet3kCI?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+		<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2TmUt0ofWMa02MdYkKhK4C?utm_source=generator&theme=0"
+			width="100%" height="152" frameBorder="0" allowfullscreen=""
+			allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+		</iframe>		
+		<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4YLXjoYmRGIXstTLtloHf2?utm_source=generator&theme=0"
+			width="100%" height="152" frameBorder="0" allowfullscreen=""
+			allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+		</iframe>
+		<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/23uNiVgsIgoHC7eLet3kCI?utm_source=generator&theme=0"
+			width="100%" height="152" frameBorder="0" allowfullscreen=""
+			allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+		</iframe>
 	</div>
-
 	<!-- Recommended Tracks Div -->
-	<div class="column-2 tile-1">
-		<p><h2 class="project-text">Recommended Song	<a id="create-playlist">Create Playlist</a></h2></p>
-		
-		<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4Ar3oSp4bAw5gz22F70GM7?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>		
-		<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0kZEfdlIq3sfQklsGcUZDm?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-		<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1tinoQpYXzpZDrb0BjK1e7?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+	<div class="column-2 tile-2">
+		<p>
+			<h2 class="project-text">Recommended Songs
+				<a id="create-playlist">Create Playlist</a>
+			</h2>
+		</p>
+		<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4Ar3oSp4bAw5gz22F70GM7?utm_source=generator&theme=0"
+			width="100%" height="152" frameBorder="0" allowfullscreen=""
+			allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+		</iframe>		
+		<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0kZEfdlIq3sfQklsGcUZDm?utm_source=generator&theme=0"
+			width="100%" height="152" frameBorder="0" allowfullscreen=""
+			allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+		</iframe>
+		<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1tinoQpYXzpZDrb0BjK1e7?utm_source=generator&theme=0"
+			width="100%" height="152" frameBorder="0" allowfullscreen=""
+			allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+		</iframe>
 	</div>
 
 	<!-- Copyright -->
-	<div id="copyright">CS230 Group 9</div>
+	<div id="copyright">CS230 Group 7</div>
 </body>
 </html>
