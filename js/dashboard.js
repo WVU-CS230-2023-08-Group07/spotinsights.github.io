@@ -4,6 +4,10 @@ function domLoaded() {
 	// Get HTML Elements
 	const loginButton = document.getElementById('login-button');
 	const logoutButton = document.getElementById('logout-button');
+	const signupButton = document.getElementById('signup-button');
+	
+	// Make sure signup button is visible
+	signupButton.style.display = 'initial';
 	
 	// Check if user is authenticated
 	getUser()
@@ -13,7 +17,7 @@ function domLoaded() {
 			
 			// Set temporary email value
 			document.getElementById('user-email').innerText = user.email;
-		
+			
 			logoutButton.style.display = 'initial'; // Add logout button
 			logoutButton.addEventListener('click', () => {
 				signOut()
