@@ -4,10 +4,6 @@ function domLoaded() {
 	// Get HTML Elements
 	const loginButton = document.getElementById('login-button');
 	const logoutButton = document.getElementById('logout-button');
-	const signupButton = document.getElementById('signup-button');
-	
-	// Make sure signup button is visible
-	signupButton.style.display = 'initial';
 	
 	// Check if user is authenticated
 	getUser()
