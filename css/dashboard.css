@@ -46,6 +46,7 @@ body {
 	text-decoration: none;
 }
 #signup-button {
+	display: initial;
 	float: right;
 }
 #login-button {
