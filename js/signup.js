@@ -16,9 +16,10 @@ function domLoaded() {
         const passwordVal = password.value;
         const confirmPasswordVal = confirmPassword.value;
 
-        if (emailVal !== '' && passwordVal !== '' && confirmPasswordVal !== '') {
-            if (passwordVal.length >= 8) {
-                if (passwordVal === confirmPasswordVal) {
+        if (emailVal !== '' && passwordVal !== '' && confirmPasswordVal !== '') { // Check fields are not empty
+            if (passwordVal.length >= 8) { // Check password is >= 8 characters
+                if (passwordVal === confirmPasswordVal) { // Check password and confirmPassword are the same
+				
                     // Create a new user with Firebase Authentication
                     firebase.auth().createUserWithEmailAndPassword(emailVal, passwordVal)
                         .then((userCredential) => {
@@ -26,7 +27,7 @@ function domLoaded() {
                             const user = userCredential.user;
                             console.log('User registered:', user);
                             // You can redirect the user to a new page or show a success message.
-							window.location.href = 'dashboard.html'; // Redirect to dashboard.html
+							window.location.href = 'login.html'; // Redirect to login.html
                         })
                         .catch((error) => {
                             // Handle Firebase Authentication errors
@@ -34,6 +35,7 @@ function domLoaded() {
                             const errorMessage = error.message;
                             signupError.innerText = errorMessage;
                         });
+				
                 } else {
                     signupError.innerText = 'Passwords do not match.';
                 }
