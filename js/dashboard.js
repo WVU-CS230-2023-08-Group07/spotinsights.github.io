@@ -6,7 +6,6 @@ function domLoaded() {
 	const logoutButton = document.getElementById('logout-button');
 	
 	// Check if user is authenticated
-	let authUser = null;
 	getUser()
 		.then((user) => {
 			// Authenticated user
