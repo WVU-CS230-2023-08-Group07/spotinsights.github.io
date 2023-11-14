@@ -14,14 +14,15 @@ function domLoaded() {
 		const emailVal = email.value;
 		const passwordVal = password.value;
 		
-		firebase.auth().signInWithEmailAndPassword(emailVal, passwordVal)
-			.then((userCredential) => {
-				// User signed in successfully
-				const user = userCredential.user;
+		// Sign in the user
+		signIn(emailVal, passwordVal)
+			.then((user) => {
+				console.log("Sign-in successful:", user);
 				window.location.href = 'dashboard.html'; // Redirect to dashboard.html
 			})
 			.catch((error) => {
-				// Handle login errors
+				console.error("Sign-in failed:", error);
+				// Handle login errors to the user
 				loginError.innerText = 'Invalid username or password. Please try again.';
 			});
 	});
