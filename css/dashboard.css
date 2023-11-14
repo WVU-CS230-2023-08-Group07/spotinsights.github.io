@@ -46,16 +46,13 @@ body {
 	text-decoration: none;
 }
 #signup-button {
-	display: initial;
 	float: right;
 }
 #login-button {
-	display: none; /* Initially do not display */
 	float: right;
 	margin-right: 10px;
 }
 #logout-button {
-	display: none; /* Initially do not display */
 	float: right;
 	margin-right: 10px;
 }
