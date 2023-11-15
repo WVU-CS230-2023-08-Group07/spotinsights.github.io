@@ -1,8 +1,7 @@
 const user = firebase.auth().currentUser;
 
 firebase.auth().onAuthStateChanged(function(user){
-	if(user){}
-	else{
+	if(!user){
 		window.location.href = "login.html"; 
 	}
 });
