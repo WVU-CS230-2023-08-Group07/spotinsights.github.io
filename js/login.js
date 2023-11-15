@@ -1,6 +1,58 @@
-window.addEventListener('DOMContentLoaded', domLoaded); // Call domLoaded() when DOM is loaded
+	/*const firebaseConfig = {
+		apiKey: "AIzaSyCiaoHpxeFZWA4gb6NJzMGunj7ytNSChKY",
+		authDomain: "spotinsights.firebaseapp.com",
+		projectId: "spotinsights",
+		storageBucket: "spotinsights.appspot.com",
+		messagingSenderId: "293805645735",
+		appId: "1:293805645735:web:490f3ccf4444b613f16082"
+	};
+	firebase.initializeApp(firebaseConfig); */
+	//Signup
+ 	function signUp() {
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
 
-function domLoaded() {
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+      .then((userCredential) => {
+        // User signed up successfully
+        const user = userCredential.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        console.error(error.message);
+      });
+  }
+
+  // Sign In
+  function signIn() {
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    firebase.auth().signInWithEmailAndPassword(email, password)
+      .then((userCredential) => {
+        // User signed in successfully
+        const user = userCredential.user;
+        console.log(user);
+        window.location.href = 'dashboard.html';
+      })
+      .catch((error) => {
+        console.error(error.message);
+      });
+  }
+
+  // Sign Out
+  function signOut() {
+    firebase.auth().signOut()
+      .then(() => {
+        // User signed out successfully
+        console.log('User signed out');
+      })
+      .catch((error) => {
+        console.error(error.message);
+      });
+  }
+
+/* function domLoaded() {
 	// Get HTML Elements
 	const button = document.getElementById('login-button');
 	const email = document.getElementById('email');
@@ -27,3 +79,4 @@ function domLoaded() {
 			});
 	});
 }
+*/
