@@ -7,8 +7,6 @@
 		appId: "1:293805645735:web:490f3ccf4444b613f16082"
 	};
 	firebase.initializeApp(firebaseConfig); */
- 
-  // Sign In
   function signIn() {
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
