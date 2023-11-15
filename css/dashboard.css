@@ -19,6 +19,14 @@ body {
 	width: 150px;
 }
 
+/* Authenticated user email */
+#user-email {
+	position: fixed;
+	width: 99%;
+	top: 4%;
+	text-align: center;
+}
+
 /* User auth components */
 #auth-buttons {
 	position: absolute;
@@ -26,7 +34,8 @@ body {
 	right: 10px;
 }
 #signup-button,
-#login-button {
+#login-button,
+#logout-button {
 	padding: 5px 10px; /* Top+Bottom Left+Right */
 	background-color: #1D1D1D;
 	border: none;
@@ -37,9 +46,16 @@ body {
 	text-decoration: none;
 }
 #signup-button {
+	display: initial;
 	float: right;
 }
 #login-button {
+	display: none; /* Do not initially display */
+	float: right;
+	margin-right: 10px;
+}
+#logout-button {
+	display: none; /* Do not initially display */
 	float: right;
 	margin-right: 10px;
 }
