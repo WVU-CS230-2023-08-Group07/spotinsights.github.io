@@ -25,6 +25,17 @@
       });
   }
 
+	function signOut() {
+	firebase.auth().signOut()
+      .then(() => {
+        // User signed out successfully
+        console.log('User signed out');
+        window.location.href = 'index.html';
+      })
+      .catch((error) => {
+        console.error(error.message);
+      });
+    }
 /* function domLoaded() {
 	// Get HTML Elements
 	const button = document.getElementById('login-button');

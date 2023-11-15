@@ -1,4 +1,6 @@
-firebase.auth().signOut()
+function signOut() {
+	console.log('called');
+	firebase.auth().signOut()
       .then(() => {
         // User signed out successfully
         console.log('User signed out');
@@ -6,5 +8,7 @@ firebase.auth().signOut()
       })
       .catch((error) => {
         console.error(error.message);
+        window.location.href = 'dashboard.html';
       });
+}
 
