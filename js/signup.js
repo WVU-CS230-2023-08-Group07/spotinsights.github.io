@@ -11,6 +11,7 @@
       })
       .catch((error) => {
         console.error(error.message);
+        window.alert(error.message);
       });
   }
 
