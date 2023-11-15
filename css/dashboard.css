@@ -45,7 +45,7 @@ body {
 	cursor: pointer;
 	text-decoration: none;
 }
-#signup-button {
+#logout-button {
 	display: initial;
 	float: right;
 }
@@ -54,7 +54,7 @@ body {
 	float: right;
 	margin-right: 10px;
 }
-#logout-button {
+#signup-button {
 	display: none; /* Do not initially display */
 	float: right;
 	margin-right: 10px;
