@@ -20,6 +20,7 @@
       })
       .catch((error) => {
         console.error(error.message);
+        window.alert("Invalid user credentials");
       });
   }
 
@@ -32,7 +33,6 @@
       })
       .catch((error) => {
         console.error(error.message);
-        window.alert(error.message);
       });
     }
 /* function domLoaded() {

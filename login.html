@@ -23,6 +23,14 @@
 	<!-- JavaScript -->
 	<script src="js/firebaseInit.js" defer></script>
 	<script src="js/login.js" defer></script>
+	<script>
+	console.log('called');
+    firebase.auth().onAuthStateChanged(function(user){
+        if (user) {
+            window.location.href = 'dashboard.html'; 
+            }
+    });
+    </script>
 </head>
 <body>
 	<!-- Logo -->
