@@ -1,4 +1,22 @@
-window.addEventListener('DOMContentLoaded', domLoaded); // Call domLoaded() when DOM is loaded
+	function signUp() {
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+      .then((userCredential) => {
+        // User signed up successfully
+        const user = userCredential.user;
+        console.log(user);
+        window.location.href = 'login.html';
+      })
+      .catch((error) => {
+        console.error(error.message);
+      });
+  }
+
+
+
+/* window.addEventListener('DOMContentLoaded', domLoaded); // Call domLoaded() when DOM is loaded
 
 function domLoaded() {
     // Get HTML Elements
@@ -42,4 +60,4 @@ function domLoaded() {
             signupError.innerText = 'All fields are required.';
         }
     });
-}
+} */

@@ -23,7 +23,6 @@
 	<!-- JavaScript -->
 	<script src="js/signup.js" defer></script>
 	<script src="js/firebaseInit.js" defer></script>
-	<script src="js/firebaseAuth.js" defer></script>
 </head>
 <body> 
 	<!-- Logo -->
@@ -34,26 +33,13 @@
 	</div>
 	
 	<!-- Page Body Content -->
-	<form id="signup-container">
-		<h1 id="section-heading">Sign Up</h1>
-		<div class="input-container">
-			<label for="email">Email:</label>
-			<input id="email" type="text" name="email" required>
-		</div>
-		<div class="input-container">
-			<label for="password">Password:</label>
-			<input id="password" type="password" name="password" required>
-		</div>
-		<div class="input-container">
-			<label for="confirm-password">Confirm Password:</label>
-			<input id="confirm-password" type="password" name="confirm-password" required>
-		</div>
-		<div class="button-container">
-			<button id="signup-button" type="submit">Sign Up</button>
-		</div>
-		<div class="error-container">
-			<p id="signup-error"></p>
-		</div>
+	<h2>Sign Up</h2>
+	<form onsubmit="event.preventDefault(); signUp();">
+		<label for="email">Email:</label>
+        <input type="email" id="email" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" required>
+        <button type="submit">Sign Up</button>
 	</form>
 	
 	<!-- Copyright -->

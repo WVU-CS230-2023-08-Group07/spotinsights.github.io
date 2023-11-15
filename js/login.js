@@ -7,22 +7,7 @@
 		appId: "1:293805645735:web:490f3ccf4444b613f16082"
 	};
 	firebase.initializeApp(firebaseConfig); */
-	//Signup
- 	function signUp() {
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-
-    firebase.auth().createUserWithEmailAndPassword(email, password)
-      .then((userCredential) => {
-        // User signed up successfully
-        const user = userCredential.user;
-        console.log(user);
-      })
-      .catch((error) => {
-        console.error(error.message);
-      });
-  }
-
+ 
   // Sign In
   function signIn() {
     const email = document.getElementById('email').value;
@@ -46,6 +31,7 @@
       .then(() => {
         // User signed out successfully
         console.log('User signed out');
+        window.location.href = 'index.html';
       })
       .catch((error) => {
         console.error(error.message);
