@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family: 'Varela Round', sans-serif;
+            margin: 20px;
+            padding: 20px;
+            text-align: center;
+            background-color: black;
+            color: #1DB954;
+        }
+
+        form {
+            max-width: 400px;
+            margin: auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 15px;
+            color: #1DB954;
+            font-family: 'Varela Round', sans-serif; 
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            color: black;
+            background-color: #fff;
+            border: 2px solid #1DB954;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 150px;
+            max-width: 100%;
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        button.cancel {
+            background-color: #FF3333;
+            color: white;
+        }
+
+        button.cancel:hover {
+            background-color: #CC0000;
+        }
+
+        button.submit {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        button.submit:hover {
+            background-color: #45a049;
+        }
+
+        h2 {
+            margin-bottom: 25px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Contact Us</h2>
+
+    <form action="mailto:your-email@example.com" method="post" enctype="text/plain">
+        <label for="name" style="font-family: 'Varela Round', sans-serif;">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email" style="font-family: 'Varela Round', sans-serif;">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message" style="font-family: 'Varela Round', sans-serif;">Message (500 character limit):</label>
+        <textarea id="message" name="message" rows="6" maxlength="500" required></textarea>
+
+        <button type="button" class="cancel">Cancel</button>
+        <button type="submit" class="submit">Submit</button>
+    </form>
+
+</body>
+
+</html>
