@@ -1,7 +1,6 @@
 body
  {
     font-family: 'Varela Round', sans-serif;
-    margin: 0;
     background-color: black;
     color: #1ed75fc4
   }
@@ -57,6 +56,31 @@ body
     color: #1ed75fc4;
   }
   
+  /* Copyright */
+  #copyright {
+	position: fixed;
+	width: 99%;
+	bottom: 0%;
+	color: gray;
+	font-size: 14px;
+	text-align: center;
+	}
+		
+	/* Logo components */
+	#logo-container {
+		position: fixed;
+		width: 99%;
+		top: 1%;
+	}
+	#logo-container a {
+		display: block;
+		margin: 0 auto; /* Top+Bottom Left+Right */
+		width: 150px;
+	}
+	#logo {
+		width: 150px;
+	}
+
    /* Code for buttons if we need them */
    /*
   .button

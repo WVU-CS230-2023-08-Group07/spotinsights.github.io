@@ -8,16 +8,18 @@
     <style>
         body {
             font-family: 'Varela Round', sans-serif;
-            margin: 20px;
-            padding: 20px;
             text-align: center;
             background-color: black;
             color: #1DB954;
         }
-
+		
+		#heading {
+			padding-top: 50px;
+		}
+		
         form {
             max-width: 400px;
-            margin: auto;
+			margin: auto;
         }
 
         label {
@@ -75,12 +77,43 @@
         h2 {
             margin-bottom: 25px;
         }
+		
+		/* Copyright */
+		#copyright {
+			position: fixed;
+			width: 99%;
+			bottom: 0%;
+			color: gray;
+			font-size: 14px;
+			text-align: center;
+		}
+		
+		/* Logo components */
+		#logo-container {
+			position: fixed;
+			width: 99%;
+			top: 1%;
+		}
+		#logo-container a {
+			display: block;
+			margin: 0 auto; /* Top+Bottom Left+Right */
+			width: 150px;
+		}
+		#logo {
+			width: 150px;
+		}
     </style>
 </head>
 
 <body>
-
-    <h2>Contact Us</h2>
+	<!-- Logo -->
+	<div id="logo-container">
+		<a href="index.html">
+			<img id="logo" src="assets/logo.png" alt="Logo" />
+		</a>
+	</div>
+	
+    <h2 id="heading">Contact Us</h2>
 
     <form action="mailto:your-email@example.com" method="post" enctype="text/plain">
         <label for="name" style="font-family: 'Varela Round', sans-serif;">Name:</label>
@@ -96,6 +129,8 @@
         <button type="submit" class="submit">Submit</button>
     </form>
 
+	<!-- Copyright -->
+	<div id="copyright">CS230 Group 7</div>
 </body>
 
 </html>
