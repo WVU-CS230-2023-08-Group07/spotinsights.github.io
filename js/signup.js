@@ -1,19 +1,36 @@
-	function signUp() {
+function signUp() {
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
-
+  
+    // Create a new user in Firebase Authentication
     firebase.auth().createUserWithEmailAndPassword(email, password)
       .then((userCredential) => {
         // User signed up successfully
         const user = userCredential.user;
-        console.log(user);
-        window.location.href = 'login.html';
+  
+        // Create a Firestore document for the new user
+        const userRef = firebase.firestore().collection('users').doc(user.uid);
+  
+        // Set initial user data in the document
+        userRef.set({
+          email: user.email,
+          // Add other user details...
+        })
+        .then(() => {
+          console.log('Firestore document created for the user');
+          window.location.href = 'login.html';
+        })
+        .catch((error) => {
+          console.error('Error creating Firestore document:', error);
+          window.alert('Error creating Firestore document');
+        });
       })
       .catch((error) => {
         console.error(error.message);
         window.alert(error.message);
       });
   }
+  
 
 
 
