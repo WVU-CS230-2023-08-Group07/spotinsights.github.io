@@ -6,6 +6,12 @@ document.addEventListener('DOMContentLoaded', function() {
   const code = params.get("code");
 
   
+  // Add an event listener to the Spotify Login button
+  document.getElementById("spotifyLoginButton").addEventListener("click", function(event) {
+    event.preventDefault();
+    redirectToAuthCodeFlow(clientId);
+  });
+  
   if (!code) {
     redirectToAuthCodeFlow(clientId);
   } else {
@@ -83,8 +89,34 @@ async function fetchProfile(token) {
     method: "GET", headers: { Authorization: `Bearer ${token}` }
   });
 
-  return await result.json();
+  const profile = await result.json();
+
+  // Save Spotify username in Firestore directory based on Firebase UID
+  saveSpotifyUsername(profile.display_name);
+
+  return profile;
 }
+
+function saveSpotifyInfo(spotifyUsername, spotifyToken) {
+  const user = firebase.auth().currentUser;
+
+  if (user) {
+    const userRef = firebase.firestore().collection('private').doc('uids').collection(user.uid);
+
+    userRef.set({
+      spotifyUsername: spotifyUsername,
+      spotifyToken: spotifyToken,
+      // other user details...
+    })
+      .then(() => {
+        console.log('Spotify information stored in Firestore directory');
+      })
+      .catch((error) => {
+        console.error('Error storing Spotify information in Firestore:', error);
+      });
+  }
+}
+
 
 
 async function fetchCurrentSong(token) {
@@ -98,13 +130,15 @@ async function fetchCurrentSong(token) {
 async function populateUI(profile) {
   localStorage.setItem("spotifyInfo", JSON.stringify(profile));
   await fetchCurrentSong(localStorage.getItem("accessToken"))
-  .then(currentSongData => {
-    song = currentSongData;
-    localStorage.setItem("songURL", song.item.external_urls.spotify);
-    console.log(localStorage.getItem("songURL"));
-  })
-  .catch(error => {
-    console.error(error);
-  });
+    .then(currentSongData => {
+      song = currentSongData;
+      localStorage.setItem("songURL", song.item.external_urls.spotify);
+      console.log(localStorage.getItem("songURL"));
+    })
+    .catch(error => {
+      console.error(error);
+    });
   window.location.href = 'callback/';
 }
+
+
