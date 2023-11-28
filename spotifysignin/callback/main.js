@@ -3,7 +3,7 @@ let urlParts = '';
 document.addEventListener('DOMContentLoaded', function() {
   console.log(localStorage.getItem("spotifyInfo"));
   console.log(localStorage.getItem("songURL"));
-  var urlParts = localStorage.getItem("songURL").split('/');
+  // var urlParts = localStorage.getItem("songURL").split('/');
 
 
   
@@ -28,12 +28,12 @@ populateUI(JSON.parse(localStorage.getItem("spotifyInfo")));
 
 function populateUI(profile) {
   document.getElementById("displayName").innerText = profile.display_name;
-  if (profile.images[0]) {
-    const profileImage = new Image(200, 200);
-    profileImage.src = profile.images[1].url;
-    document.getElementById("avatar").appendChild(profileImage);
-    document.getElementById("imgUrl").innerText = profile.images[0].url;
-  }
+  // if (profile.images[0]) {
+  //   const profileImage = new Image(200, 200);
+  //   profileImage.src = profile.images[1].url;
+  //   document.getElementById("avatar").appendChild(profileImage);
+  //   document.getElementById("imgUrl").innerText = profile.images[0].url;
+  // }
   document.getElementById("id").innerText = profile.id;
   document.getElementById("email").innerText = profile.email;
   document.getElementById("uri").innerText = profile.uri;

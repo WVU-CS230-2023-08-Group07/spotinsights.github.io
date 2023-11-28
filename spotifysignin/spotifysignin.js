@@ -6,12 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
   const code = params.get("code");
 
   
-  // Add an event listener to the Spotify Login button
-  document.getElementById("spotifyLoginButton").addEventListener("click", function(event) {
-    event.preventDefault();
-    redirectToAuthCodeFlow(clientId);
-  });
-  
   if (!code) {
     redirectToAuthCodeFlow(clientId);
   } else {
@@ -23,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return fetchProfile(token);
         })
         .then(profile => {
+            saveSpotifyInfo(profile.display_name, localStorage.getItem("accessToken"));
             populateUI(profile);
         })
         .catch(error => console.error(error));
