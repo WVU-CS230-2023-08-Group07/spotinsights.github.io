@@ -1,27 +1,52 @@
 let spotifyTrackUrl = '';
 let urlParts = '';
-document.addEventListener('DOMContentLoaded', function() {
-  console.log(localStorage.getItem("spotifyInfo"));
-  console.log(localStorage.getItem("songURL"));
-  // var urlParts = localStorage.getItem("songURL").split('/');
 
+document.addEventListener('DOMContentLoaded', async function () {
+  try {
+    const user = firebase.auth().currentUser;
 
-  
-  var spotifyTrackUrl = "https://open.spotify.com/embed/track/" + urlParts[4];
+    if (user) {
+      const userRef = firebase.firestore().collection('private').doc('uids').collection(user.uid);
 
-  const iframe = document.createElement('iframe');
-  iframe.style.borderRadius = '12px';
-  iframe.src = spotifyTrackUrl;
-  iframe.width = '25%';
-  iframe.height = '352';
-  iframe.frameBorder = '0';
-  iframe.allowFullscreen = true;
-  iframe.allow = 'autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture';
-  iframe.loading = 'lazy';
+      const snapshot = await userRef.get();
 
-  const spotifyEmbedContainer = document.getElementById('spotifyEmbed');
-  spotifyEmbedContainer.appendChild(iframe);
-  refreshIframe();
+      if (!snapshot.empty) {
+        const lastDocument = snapshot.docs[snapshot.docs.length - 1].data();
+
+        console.log(lastDocument); // This will contain your Spotify information
+
+        // Assuming 'songURL' is stored in Firestore, adjust the property name if needed
+        const songURL = lastDocument.songURL;
+
+        if (songURL) {
+          var urlParts = songURL.split('/');
+          spotifyTrackUrl = "https://open.spotify.com/embed/track/" + urlParts[4];
+
+          const iframe = document.createElement('iframe');
+          iframe.style.borderRadius = '12px';
+          iframe.src = spotifyTrackUrl;
+          iframe.width = '25%';
+          iframe.height = '352';
+          iframe.frameBorder = '0';
+          iframe.allowFullscreen = true;
+          iframe.allow = 'autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture';
+          iframe.loading = 'lazy';
+
+          const spotifyEmbedContainer = document.getElementById('spotifyEmbed');
+          spotifyEmbedContainer.appendChild(iframe);
+          refreshIframe();
+        } else {
+          console.error('songURL is not present in Firestore.');
+        }
+      } else {
+        console.error('No documents found in Firestore for the user.');
+      }
+    } else {
+      console.error('User not authenticated.');
+    }
+  } catch (error) {
+    console.error('Error retrieving Spotify information from Firestore:', error);
+  }
 });
 
 populateUI(JSON.parse(localStorage.getItem("spotifyInfo")));
@@ -44,6 +69,16 @@ function populateUI(profile) {
 
 function refreshIframe() {
   const iframe = document.getElementById('spotifyEmbed');
+
+  // Check if "songURL" is present in localStorage
+  if (localStorage.getItem("songURL")) {
+    var urlParts = localStorage.getItem("songURL").split('/');
+    spotifyTrackUrl = "https://open.spotify.com/embed/track/" + urlParts[4];
+    iframe.src = spotifyTrackUrl;
+  } else {
+    console.error('songURL is not present in localStorage.');
+  }
+
   fetchCurrentSong(localStorage.getItem("accessToken"))
     .then(currentSongData => {
       var song = currentSongData;
@@ -52,15 +87,4 @@ function refreshIframe() {
     .catch(error => {
       console.error(error);
     });
-  var urlParts = localStorage.getItem("songURL").split('/');
-  spotifyTrackUrl = "https://open.spotify.com/embed/track/" + urlParts[4];
-  iframe.src = iframe.src;
-}
-
-async function fetchCurrentSong(token) {
-  const result = await fetch("https://api.spotify.com/v1/me/player/currently-playing", {
-    method: "GET", headers: { Authorization: `Bearer ${token}` }
-  });
-
-  return result.json();
 }

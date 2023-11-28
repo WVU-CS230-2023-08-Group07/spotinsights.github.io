@@ -1,26 +1,24 @@
 let song;
-document.addEventListener('DOMContentLoaded', function() {
+
+document.addEventListener('DOMContentLoaded', async function () {
   document.getElementById("authorizeButton").style.display = "none";
   const clientId = "1a9863d157de4ba9aff6cfec18843f5b";
   const params = new URLSearchParams(window.location.search);
   const code = params.get("code");
 
-  
   if (!code) {
     redirectToAuthCodeFlow(clientId);
   } else {
-    
+    try {
+      const token = await getAccessToken(clientId, code);
+      const profile = await fetchProfile(token);
 
-    getAccessToken(clientId, code)
-        .then(token => {
-            localStorage.setItem("accessToken", token);
-            return fetchProfile(token);
-        })
-        .then(profile => {
-            saveSpotifyInfo(profile.display_name, localStorage.getItem("accessToken"));
-            populateUI(profile);
-        })
-        .catch(error => console.error(error));
+      await saveSpotifyInfo(profile.display_name, token);
+      populateUI(profile);
+
+    } catch (error) {
+      console.error(error);
+    }
   }
 });
 
@@ -92,23 +90,23 @@ async function fetchProfile(token) {
   return profile;
 }
 
-function saveSpotifyInfo(spotifyUsername, spotifyToken) {
+async function saveSpotifyInfo(spotifyUsername, spotifyToken) {
   const user = firebase.auth().currentUser;
 
   if (user) {
     const userRef = firebase.firestore().collection('private').doc('uids').collection(user.uid);
 
-    userRef.set({
-      spotifyUsername: spotifyUsername,
-      spotifyToken: spotifyToken,
-      // other user details...
-    })
-      .then(() => {
-        console.log('Spotify information stored in Firestore directory');
-      })
-      .catch((error) => {
-        console.error('Error storing Spotify information in Firestore:', error);
+    try {
+      await userRef.add({
+        spotifyUsername: spotifyUsername,
+        spotifyToken: spotifyToken,
+        // other user details...
       });
+
+      console.log('Spotify information stored in Firestore directory');
+    } catch (error) {
+      console.error('Error storing Spotify information in Firestore:', error);
+    }
   }
 }
 
