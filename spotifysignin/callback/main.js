@@ -3,15 +3,42 @@ document.addEventListener('DOMContentLoaded', async function () {
     const user = firebase.auth().currentUser;
 
     if (user) {
+      // User is authenticated, proceed with retrieving and displaying Spotify information.
       const uidsDocRef = firebase.firestore().collection('private');
       const userRef = uidsDocRef.doc(user.uid);
 
       const snapshot = await userRef.get();
 
       if (!snapshot.empty) {
-        const lastDocument = snapshot.docs[snapshot.docs.length - 1].data();
+        const lastDocument = snapshot.docs[0].data(); // Use the latest document
 
         console.log(lastDocument); // This will contain your Spotify information
+
+        // Adjust the field names based on your actual document structure
+        const songURL = lastDocument.spotifyUsername;
+        const spotifyToken = lastDocument.spotifyToken;
+
+        if (songURL && spotifyToken) {
+          // ... rest of your code remains unchanged
+        } else {
+          console.error('spotifyUsername or spotifyToken is not present in Firestore.');
+        }
+      } else {
+        console.error('No documents found in Firestore for the user.');
+      }
+    } else {
+      // User is not authenticated. This might be an anonymous user.
+      // Retrieve Spotify information using the temporary identifier for anonymous users.
+      const tempId = 'anonymous_uid'; // Use the same temporary identifier as in saveSpotifyInfo
+      const uidsDocRef = firebase.firestore().collection('private');
+      const userRef = uidsDocRef.doc(tempId);
+
+      const snapshot = await userRef.get();
+
+      if (!snapshot.empty) {
+        const lastDocument = snapshot.docs[0].data(); // Use the latest document
+
+        console.log(lastDocument); // This will contain your Spotify information for anonymous users
 
         // Adjust the field names based on your actual document structure
         const songURL = lastDocument.spotifyUsername;
@@ -55,12 +82,8 @@ document.addEventListener('DOMContentLoaded', async function () {
           console.error('spotifyUsername or spotifyToken is not present in Firestore.');
         }
       } else {
-        console.error('No documents found in Firestore for the user.');
+        console.error('No documents found in Firestore for the anonymous user.');
       }
-    } else {
-      // If the user is anonymous, you can handle this case
-      console.log('User not authenticated. This might be an anonymous user.');
-      // Display a message or provide options for anonymous users
     }
   } catch (error) {
     console.error('Error retrieving Spotify information from Firestore:', error);
