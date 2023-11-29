@@ -82,10 +82,8 @@ document.addEventListener('DOMContentLoaded', async function () {
           console.error('spotifyUsername or spotifyToken is not present in Firestore.');
         }
       } else {
-        console.error('No documents found in Firestore for the anonymous user.');
+        console.error('No documents found in Firestore for the user.');
       }
-    } else {
-      console.error('User not authenticated.');
     }
   } catch (error) {
     console.error('Error retrieving Spotify information from Firestore:', error);

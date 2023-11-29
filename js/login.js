@@ -1,13 +1,12 @@
-	// const firebaseConfig = {
-	// 	apiKey: "AIzaSyCiaoHpxeFZWA4gb6NJzMGunj7ytNSChKY",
-	// 	authDomain: "spotinsights.firebaseapp.com",
-	// 	projectId: "spotinsights",
-	// 	storageBucket: "spotinsights.appspot.com",
-	// 	messagingSenderId: "293805645735",
-	// 	appId: "1:293805645735:web:490f3ccf4444b613f16082"
-	// };
-	// firebase.initializeApp(firebaseConfig);
-
+	/*const firebaseConfig = {
+		apiKey: "AIzaSyCiaoHpxeFZWA4gb6NJzMGunj7ytNSChKY",
+		authDomain: "spotinsights.firebaseapp.com",
+		projectId: "spotinsights",
+		storageBucket: "spotinsights.appspot.com",
+		messagingSenderId: "293805645735",
+		appId: "1:293805645735:web:490f3ccf4444b613f16082"
+	};
+	firebase.initializeApp(firebaseConfig); */
   function signIn() {
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
@@ -17,7 +16,7 @@
         // User signed in successfully
         const user = userCredential.user;
         console.log(user);
-        window.location.href = 'spotifysignin/index.html';
+        window.location.href = 'dashboard.html';
       })
       .catch((error) => {
         console.error(error.message);
