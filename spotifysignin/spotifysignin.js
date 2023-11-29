@@ -31,7 +31,8 @@ export async function redirectToAuthCodeFlow(clientId) {
   const params = new URLSearchParams();
   params.append("client_id", clientId);
   params.append("response_type", "code");
-  params.append("redirect_uri", "https://wvu-cs230-2023-08-group07.github.io/spotinsights.github.io/spotifysignin/");
+  // params.append("redirect_uri", "https://wvu-cs230-2023-08-group07.github.io/spotinsights.github.io/spotifysignin/");
+  params.append("redirect_uri", "http://localhost:8080/spotifysignin/callback");
   params.append("scope", "user-read-private user-read-email user-read-currently-playing user-read-playback-state");
   params.append("code_challenge_method", "S256");
   params.append("code_challenge", challenge);
