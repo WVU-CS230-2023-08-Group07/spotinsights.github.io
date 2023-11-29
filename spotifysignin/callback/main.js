@@ -84,6 +84,8 @@ document.addEventListener('DOMContentLoaded', async function () {
       } else {
         console.error('No documents found in Firestore for the anonymous user.');
       }
+    } else {
+      console.error('User not authenticated.');
     }
   } catch (error) {
     console.error('Error retrieving Spotify information from Firestore:', error);

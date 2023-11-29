@@ -154,14 +154,16 @@ async function saveSpotifyInfo(spotifyUsername, spotifyToken) {
   const user = firebase.auth().currentUser;
 
   if (user) {
-    const userRef = firebase.firestore().collection('private').doc('uids').collection(user.uid);
+    const uidsDocRef = firebase.firestore().collection('private');
+    const userRef = uidsDocRef.doc(user.uid);
 
     try {
-      await userRef.doc('user_data').set({
+      // Use set with merge option to update or create the document
+      await userRef.set({
         spotifyUsername: spotifyUsername,
         spotifyToken: spotifyToken,
         // other user details...
-      });
+      }, { merge: true });
 
       console.log('Spotify information stored in Firestore directory');
     } catch (error) {
@@ -169,10 +171,6 @@ async function saveSpotifyInfo(spotifyUsername, spotifyToken) {
     }
   }
 }
-
-
-
-
 async function fetchCurrentSong(token) {
   const result = await fetch("https://api.spotify.com/v1/me/player/currently-playing", {
     method: "GET", headers: { Authorization: `Bearer ${token}` }
