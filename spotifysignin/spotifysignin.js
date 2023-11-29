@@ -85,7 +85,7 @@ async function fetchProfile(token) {
   const profile = await result.json();
 
   // Save Spotify username in Firestore directory based on Firebase UID
-  saveSpotifyUsername(profile.display_name);
+  saveSpotifyInfo(profile.display_name, token);
 
   return profile;
 }
@@ -97,7 +97,7 @@ async function saveSpotifyInfo(spotifyUsername, spotifyToken) {
     const userRef = firebase.firestore().collection('private').doc('uids').collection(user.uid);
 
     try {
-      await userRef.add({
+      await userRef.doc('user_data').set({
         spotifyUsername: spotifyUsername,
         spotifyToken: spotifyToken,
         // other user details...
@@ -109,6 +109,7 @@ async function saveSpotifyInfo(spotifyUsername, spotifyToken) {
     }
   }
 }
+
 
 
 
