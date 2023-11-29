@@ -95,10 +95,14 @@ async function saveSpotifyInfo(spotifyUsername, spotifyToken) {
   const user = firebase.auth().currentUser;
 
   if (user) {
-    const userRef = firebase.firestore().collection('private').doc('uids').collection(user.uid);
+    const uidsDocRef = firebase.firestore().collection('private').doc('uids');
+    const userRef = uidsDocRef.collection(user.uid);
 
     try {
-      await userRef.doc('user_data').set({
+      // Check if the 'uids' document exists, create it if not
+      await uidsDocRef.set({}, { merge: true });
+
+      await userRef.doc(user.uid).set({
         spotifyUsername: spotifyUsername,
         spotifyToken: spotifyToken,
         // other user details...
@@ -110,6 +114,7 @@ async function saveSpotifyInfo(spotifyUsername, spotifyToken) {
     }
   }
 }
+
 
 
 
