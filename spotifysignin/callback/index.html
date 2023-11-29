@@ -5,7 +5,11 @@
   <title>
     Spotinsights - Spotify Account Information
   </title>
-  <script src="main.js" type="module"></script>
+  <!-- Firebase SDK -->
+	<script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-firestore.js"></script>
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
@@ -72,6 +76,8 @@
     }
   </style>
   <link rel="icon" type="image/png" href="../../assets/logoi.png">
+  <script src="main.js" type="module"></script>
+  <script src="../../js/firebaseInit.js"></script>
 </head>
 
 <body>
@@ -87,14 +93,14 @@
     <h2>Logged in as <span id="displayName"></span></h2>
     <p>token: <span id="accessToken"></span></p>
 
-    <!-- <span id="avatar"></span>
+    <span id="avatar"></span>
     <p>User ID: <span id="id"></span></p>
     <p>Email: <span id="email"></span></p>
     <p>Spotify URI: <a id="uri" href="#"></a></p>
     <p>Link: <a id="url" href="#"></a></p>
     <p>Profile Image: <span id="imgUrl"></span></p>
     <p>Current Song:</p>
-    <div id="spotifyEmbed"></div> -->
+    <div id="spotifyEmbed"></div>
   </section>
   
   </div>

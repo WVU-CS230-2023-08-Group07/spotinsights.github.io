@@ -3,8 +3,8 @@ document.addEventListener('DOMContentLoaded', async function () {
     const user = firebase.auth().currentUser;
 
     if (user) {
-      const uidsDocRef = firebase.firestore().collection('private').doc('uids');
-      const userRef = uidsDocRef.collection(user.uid);
+      const uidsDocRef = firebase.firestore().collection('private');
+      const userRef = uidsDocRef.doc(user.uid);
 
       const snapshot = await userRef.get();
 

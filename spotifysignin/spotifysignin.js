@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', async function () {
       const profile = await fetchProfile(token);
 
       await saveSpotifyInfo(profile.display_name, token);
-      populateUI(profile);
+      // populateUI(profile);
 
     } catch (error) {
       console.error(error);
@@ -95,18 +95,16 @@ async function saveSpotifyInfo(spotifyUsername, spotifyToken) {
   const user = firebase.auth().currentUser;
 
   if (user) {
-    const uidsDocRef = firebase.firestore().collection('private').doc('uids');
-    const userRef = uidsDocRef.collection(user.uid);
+    const uidsDocRef = firebase.firestore().collection('private');
+    const userRef = uidsDocRef.doc(user.uid);
 
     try {
-      // Check if the 'uids' document exists, create it if not
-      await uidsDocRef.set({}, { merge: true });
-
-      await userRef.doc(user.uid).set({
+      // Use set with merge option to update or create the document
+      await userRef.set({
         spotifyUsername: spotifyUsername,
         spotifyToken: spotifyToken,
         // other user details...
-      });
+      }, { merge: true });
 
       console.log('Spotify information stored in Firestore directory');
     } catch (error) {
@@ -114,11 +112,6 @@ async function saveSpotifyInfo(spotifyUsername, spotifyToken) {
     }
   }
 }
-
-
-
-
-
 async function fetchCurrentSong(token) {
   const result = await fetch("https://api.spotify.com/v1/me/player/currently-playing", {
     method: "GET", headers: { Authorization: `Bearer ${token}` }
@@ -127,18 +120,18 @@ async function fetchCurrentSong(token) {
   return result.json();
 }
 
-async function populateUI(profile) {
-  localStorage.setItem("spotifyInfo", JSON.stringify(profile));
-  await fetchCurrentSong(localStorage.getItem("accessToken"))
-    .then(currentSongData => {
-      song = currentSongData;
-      localStorage.setItem("songURL", song.item.external_urls.spotify);
-      console.log(localStorage.getItem("songURL"));
-    })
-    .catch(error => {
-      console.error(error);
-    });
-  window.location.href = 'callback/';
-}
+// async function populateUI(profile) {
+//   localStorage.setItem("spotifyInfo", JSON.stringify(profile));
+//   await fetchCurrentSong(localStorage.getItem("accessToken"))
+//     .then(currentSongData => {
+//       song = currentSongData;
+//       localStorage.setItem("songURL", song.item.external_urls.spotify);
+//       console.log(localStorage.getItem("songURL"));
+//     })
+//     .catch(error => {
+//       console.error(error);
+//     });
+//   window.location.href = 'callback/';
+// }
 
 

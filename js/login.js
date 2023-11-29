@@ -16,7 +16,7 @@
         // User signed in successfully
         const user = userCredential.user;
         console.log(user);
-        window.location.href = 'dashboard.html';
+        window.location.href = 'spotifysignin/index.html';
       })
       .catch((error) => {
         console.error(error.message);
