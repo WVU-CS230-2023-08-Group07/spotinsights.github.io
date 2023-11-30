@@ -65,6 +65,15 @@ body {
 	background-color: #45a049;
 	transform: scale(1.05); 
 }
+#signup-text {
+	margin: 50px 0px 20px 0px; /* Top Right Bottom Left */
+}
+#signup-button {
+	background-color: #1D1D1D;
+}
+#signup-button:hover {
+	background-color: #2e2e2e;
+}
 
 /* Copyright */
 #copyright {

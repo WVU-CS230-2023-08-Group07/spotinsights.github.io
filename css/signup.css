@@ -38,7 +38,6 @@ body {
 	display: block;
 	margin-bottom: 5px;
 }
-
 .input-container input {
 	width: 100%;
 	padding: 10px;
@@ -66,6 +65,15 @@ body {
 	background-color: #45a049;
 	transform: scale(1.05); 
 }
+#login-text {
+	margin: 50px 0px 20px 0px; /* Top Right Bottom Left */
+}
+#login-button {
+	background-color: #1D1D1D;
+}
+#login-button:hover {
+	background-color: #2e2e2e;
+}
 
 /* Copyright */
 #copyright {
@@ -75,10 +83,4 @@ body {
 	color: gray;
 	font-size: 14px;
 	text-align: center;
-}
-
-/* New Login Form */
-#email,
-#password {
-	width: 99%;
 }
