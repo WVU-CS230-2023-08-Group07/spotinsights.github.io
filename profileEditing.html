@@ -1,14 +1,77 @@
 <!DOCTYPE html>
-<!-- reminder! profileEditing.css is located in css/profileEditing.css -->
+<html lang="en">
 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Spotinsights - Profile</title>
+	<link rel="icon" type="image/png" href="assets/logoi.png">
+	
+	<!-- Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+	
 	<!-- Firebase SDK -->
 	<script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-auth.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-firestore.js"></script>
-	<!-- JavaScript -->
-	<script src="js/firebaseInit.js"></script>
-	<script src="js/logincheck.js"></script>
+	
+	<!-- CSS Stylesheets -->
+	<link rel="stylesheet" href="css/profileEditing.css">
+	<link rel="stylesheet" href="css/scrollbar.css">
+	<link rel="stylesheet" href="css/friendsList.css">
 </head>
+<body>
+	<!-- Logo -->
+	<div id="logo-container">
+		<a href="index.html">
+			<img id="logo" src="assets/logo.png" alt="Logo" />
+		</a>
+	</div>
+	
+		<!-- Sidebar / Friends List -->
+	<div id="friends-list" style="left: -250px;">
+		<ul>
+			<li>
+				<img src="" alt="Friend 1">
+				<div class="info">
+					<h3>Friend 1</h3>
+					<p>Username: @friend1</p>
+					<p>Song: Song Title 1</p>
+				</div>
+			</li>
+			<li>
+				<img src="" alt="Friend 2">
+				<div class="info">
+					<h3>Friend 2</h3>
+					<p>Username: @friend2</p>
+					<p>Song: Song Title 2</p>
+				</div>
+			</li>
+			<li>
+				<img src="" alt="Friend 3">
+				<div class="info">
+					<h3>Friend 3</h3>
+					<p>Username: @friend3</p>
+					<p>Song: Song Title 3</p>
+				</div>
+			</li>
+			<!-- Area to add more friends --> 
+		</ul> 
+	</div>
+	
+	<!-- Navbar / Topbar -->
+	<div id="navbar-container">
+		<div id="toggle-sidebar" onclick="toggleSidebar()">☰</div>
+		<div id="auth-buttons">
+			<a id="logout-button" href="logout.html">Log Out</a>
+			<a id="login-button" href="login.html">Login</a>
+			<a id="signup-button" href="#">Sign Up</a>
+		</div>
+	</div>
+
+
+
 <div class="container">
     <div class="row gutters">
     <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
@@ -103,4 +166,16 @@
     </div>
     </div>
     </div>
-    </div>
+</div>
+
+	
+	
+	<!-- Copyright -->
+	<div id="copyright">CS230 Group 7</div>
+	
+	<!-- JavaScript -->
+	<script src="js/firebaseInit.js"></script>
+	<script src="js/logincheck.js"></script>
+	<script src="js/friendsList.js"></script>
+</body>
+</html>

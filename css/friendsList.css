@@ -2,7 +2,7 @@
 
 #friends-list {
 	width: 250px;
-	background-color: #000;
+	background-color: #1D1D1D;
 	position: fixed;
 	top: 0;
 	left: -250px; /* Hides sidebar */

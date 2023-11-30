@@ -19,14 +19,6 @@ body {
 	width: 150px;
 }
 
-/* Authenticated user email */
-#user-email {
-	position: fixed;
-	width: 99%;
-	top: 4%;
-	text-align: center;
-}
-
 /* User auth components */
 #auth-buttons {
 	position: absolute;
