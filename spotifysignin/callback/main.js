@@ -19,7 +19,39 @@ document.addEventListener('DOMContentLoaded', async function () {
         const spotifyToken = lastDocument.spotifyToken;
 
         if (songURL && spotifyToken) {
-          // ... rest of your code remains unchanged
+          // Create and append Spotify Embed iframe
+          var urlParts = songURL.split('/');
+          const spotifyTrackUrl = "https://open.spotify.com/embed/track/" + urlParts[4];
+
+          const iframe = document.createElement('iframe');
+          iframe.style.borderRadius = '12px';
+          iframe.src = spotifyTrackUrl;
+          iframe.width = '25%';
+          iframe.height = '352';
+          iframe.frameBorder = '0';
+          iframe.allowFullscreen = true;
+          iframe.allow = 'autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture';
+          iframe.loading = 'lazy';
+
+          const spotifyEmbedContainer = document.getElementById('spotifyEmbed');
+          spotifyEmbedContainer.appendChild(iframe);
+
+          // Fetch current song and update localStorage
+          fetchCurrentSong(spotifyToken)
+            .then(currentSongData => {
+              var song = currentSongData;
+              localStorage.setItem("songURL", song.item.external_urls.spotify);
+            })
+            .catch(error => {
+              console.error(error);
+            });
+
+          // Display Spotify information in your UI
+          document.getElementById("accessToken").innerText = spotifyToken;
+          document.getElementById("displayName").innerText = lastDocument.spotifyUsername;
+
+          // For debugging, you can log the entire document
+          console.log('Firestore Document:', lastDocument);
         } else {
           console.error('spotifyUsername or spotifyToken is not present in Firestore.');
         }
