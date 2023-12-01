@@ -19,40 +19,6 @@
 	<!-- CSS Stylesheets -->
 	<link rel="stylesheet" href="css/login.css">
 	<link rel="stylesheet" href="css/scrollbar.css">
-</head>
-<body>
-	<!-- Logo -->
-	<div id="logo-container">
-		<a href="index.html">
-			<img id="logo" src="assets/logo.png" alt="Logo" />
-		</a>
-	</div>
-	
-	<!-- Page Body Content -->
-    <form id="login-container" onsubmit="event.preventDefault(); signIn();">
-		<h1 id="section-heading">Login</h1>
-		<div class="input-container">
-			<label for="email">Email:</label>
-			<input id="email" type="text" name="email" required>
-		</div>
-		<div class="input-container">
-			<label for="password">Password:</label>
-			<input id="password" type="password" name="password" required>
-		</div>		
-		<div class="button-container">
-			<button id="login-button" type="submit">Login</button>
-		</div>
-		<p id="signup-text">Don't have an account?</p>
-		<div class="button-container">
-			<button id="signup-button" onclick="location.href = 'signup.html';">Sign Up</button>
-		</div>
-		<!-- <div class="error-container">
-			<p id="login-error"></p>
-		</div> -->
-    </form>
-
-	<!-- Copyright -->
-	<div id="copyright">CS230 Group 7</div>
 	
 	<!-- JavaScript -->
 	<script src="js/login.js" defer></script>
@@ -65,5 +31,44 @@
             }
     });
     </script>
+</head>
+<body>
+	<!-- Logo -->
+	<div id="logo-container">
+		<a href="index.html">
+			<img id="logo" src="assets/logo.png" alt="Logo" />
+		</a>
+	</div>
+	
+	<!-- Page Body Content -->
+    <form id="login-container" onsubmit="event.preventDefault(); signIn();">
+		<h1 id="section-heading">Login</h1>
+		
+		<div class="input-container">
+			<label for="email">Email:</label>
+			<input id="email" type="text" name="email" required>
+		</div>
+		
+		<div class="input-container">
+			<label for="password">Password:</label>
+			<input id="password" type="password" name="password" required>
+		</div>		
+		
+		<div class="button-container">
+			<button id="login-button" type="submit">Login</button>
+		</div>
+		
+		<p id="signup-text">Don't have an account?</p>
+		<div class="button-container">
+			<button id="signup-button" onclick="location.href = 'signup.html';">Sign Up</button>
+		</div>
+		
+		<!-- <div class="error-container">
+			<p id="login-error"></p>
+		</div> -->
+    </form>
+
+	<!-- Copyright -->
+	<div id="copyright">CS230 Group 7</div>
 </body>
 </html>

@@ -11,7 +11,7 @@ function signIn() {
 		})
 		.catch((error) => {
 			console.error(error.message);
-			window.alert("Invalid user credentials");
+			window.alert('Invalid user credentials');
 		});
 }
 
@@ -20,7 +20,7 @@ function signOut() {
 		.then(() => {
 			// User signed out successfully
 			console.log('User signed out');
-			window.location.href = 'index.html';
+			window.location.href = 'login.html';
 		})
 		.catch((error) => {
 			console.error(error.message);

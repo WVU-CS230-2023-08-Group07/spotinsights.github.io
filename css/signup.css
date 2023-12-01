@@ -39,11 +39,11 @@ body {
 	margin-bottom: 5px;
 }
 .input-container input {
-	width: 100%;
+	width: calc(100% - 20px); /* Takes into consideration inherit padding */
 	padding: 10px;
 	border: none;
 	border-radius: 20px;
-	margin: 5px 0; /* Top+Bottom Left+Right */
+	margin-bottom: 5px;
 	background-color: #1D1D1D;
 	color: white;
 }
@@ -65,7 +65,12 @@ body {
 	background-color: #45a049;
 	transform: scale(1.05); 
 }
-#login-text {
+#requirements-list {
+	text-align: left;
+	padding-left: 30px;
+}
+#login-text,
+#requirements-text {
 	margin: 50px 0px 20px 0px; /* Top Right Bottom Left */
 }
 #login-button {
@@ -73,6 +78,14 @@ body {
 }
 #login-button:hover {
 	background-color: #2e2e2e;
+}
+.vis-container {
+	display: flex;
+	justify-content: flex-end;
+}
+#password-vis:hover,
+#confirm-password-vis:hover {
+	cursor: pointer;
 }
 
 /* Copyright */

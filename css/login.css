@@ -39,11 +39,11 @@ body {
 	margin-bottom: 5px;
 }
 .input-container input {
-	width: 100%;
+	width: calc(100% - 20px); /* Takes into consideration inherit padding */
 	padding: 10px;
 	border: none;
 	border-radius: 20px;
-	margin: 5px 0; /* Top+Bottom Left+Right */
+	margin-bottom: 5px;
 	background-color: #1D1D1D;
 	color: white;
 }
