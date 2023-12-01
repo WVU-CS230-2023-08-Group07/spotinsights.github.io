@@ -1,3 +1,5 @@
+/* NOT CURRENTLY IN USE */
+
 /* Various different authentication functions used in Firebase */
 
 // Function to create a new user (and automatically sign in)

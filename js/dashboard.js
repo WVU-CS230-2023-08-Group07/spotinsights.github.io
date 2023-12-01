@@ -2,39 +2,22 @@ window.addEventListener('DOMContentLoaded', domLoaded); // Call domLoaded() when
 
 function domLoaded() {
 	// Get HTML Elements
-	const loginButton = document.getElementById('login-button');
 	const logoutButton = document.getElementById('logout-button');
 	
 	// Check if user is authenticated
-	getUser()
-		.then((user) => {
-			// Authenticated user
-			console.log('Authenticated user:', user);
+	firebase.auth().onAuthStateChanged((user) => {
+		if (user) {
+			// User is signed in
+			console.log('User is signed in:', user);
 			
-			// Set temporary email value
-			document.getElementById('user-email').innerText = user.email;
-			
-			logoutButton.style.display = 'initial'; // Add logout button
-			logoutButton.addEventListener('click', () => {
-				signOut()
-					.then(() => {
-						console.log('Sign out successful');
-						window.location.href = 'dashboard.html'; // Refresh dashboard.html
-					})
-					.catch((error) => {
-						console.error('Error signing out:', error);
-					});
-			});
-		})
-		.catch(() => {
-			// No authenticated user
-			console.log('No authenticated user');
-			
-			/* TEMPORARY */
-			document.getElementById('user-email').innerText = 'No authenticated user';
-			
-			loginButton.style.display = 'initial'; // Add login button
-		});
+			// Display the logout button
+			logoutButton.style.display = 'initial';
+		}
+		else {
+			// User is not signed in
+			console.log('No user is signed in.');
+		}
+	});	
 	
 	if (localStorage.getItem('spotifyInfo') !== null) {
 		document.getElementById('login-button').style.display = 'none';

@@ -24,6 +24,9 @@
 	<!-- JavaScript -->
 	<script src="js/firebaseInit.js"></script>
 	<script src="js/logincheck.js"></script>
+	<script src="js/dashboard.js"></script>
+	<script src="js/friendsList.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 </head>
 <body>	
 	<!-- Logo -->
@@ -34,12 +37,12 @@
 	</div>
 	
 	<!-- Spotify Auth Profile -->
-	<a href='./spotifysignin/callback'> 
+	<!-- <a href='./spotifysignin/callback'> 
 		<div id="user-profile">
 			<img id="profile-image" src="" alt="Profile Image">
 			<div id="display-name"></div>
 		</div>
-	</a>
+	</a> -->
 	
 	<!-- Sidebar / Friends List -->
 	<div id="friends-list" style="left: -250px;">
@@ -77,8 +80,6 @@
 		<div id="toggle-sidebar" onclick="toggleSidebar()">☰</div>
 		<div id="auth-buttons">
 			<a id="logout-button" href="logout.html">Log Out</a>
-			<a id="login-button" href="login.html">Login</a>
-			<a id="signup-button" href="#">Sign Up</a>
 		</div>
 	</div>
 	
@@ -105,10 +106,5 @@
 	
 	<!-- Copyright -->
 	<div id="copyright">CS230 Group 7</div>
-	
-	<!-- JavaScript -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-	<script src="js/dashboard.js"></script>
-	<script src="js/friendsList.js"></script>
 </body>
 </html>
