@@ -17,14 +17,8 @@
 	<!-- JavaScript -->
 	<script src="js/firebaseInit.js"></script>
 	<script>
-	console.log('called');
 	firebase.auth().signOut()
-        firebase.auth().onAuthStateChanged(function(user){
-            if (!user) {
-            	console.log('called, no user');
-            	window.location.href = 'login.html'; 
-            }
-        });
+    window.location.href = 'login.html'; 
     </script>
 </head>
 <body>
