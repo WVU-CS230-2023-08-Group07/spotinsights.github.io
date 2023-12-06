@@ -13,11 +13,11 @@ async function fetchWebApi(endpoint, method, body) {
     return await res.json();
 }
 
-async function getTopTracks(){
+async function getTopTracks(numTracks){
     // Endpoint reference : https://developer.spotify.com/documentation/web-api/reference/get-users-top-artists-and-tracks
     // ?Adjust limit to increase songs retrieved?
     return (await fetchWebApi(
-        'v1/me/top/tracks?time_range=short_term&limit=5', 'GET'
+        'v1/me/top/tracks?time_range=short_term&limit='+numTracks, 'GET'
     )).items;
 }
 
