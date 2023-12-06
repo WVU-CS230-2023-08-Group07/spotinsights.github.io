@@ -26,13 +26,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 populateUI(JSON.parse(localStorage.getItem("spotifyInfo")));
 
-window.onload = function() {
-    document.getElementById("implicitFlow").onclick = function implicitFlow() {
-        alert("log in");
-        implicitFlow();
-    }
-}
-
 function populateUI(profile) {
   document.getElementById("displayName").innerText = profile.display_name;
   if (profile.images[0]) {
