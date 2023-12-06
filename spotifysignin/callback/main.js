@@ -26,6 +26,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
 populateUI(JSON.parse(localStorage.getItem("spotifyInfo")));
 
+window.onload = function() {
+    document.getElementById("implicitFlow").onclick = function implicitFlow() {
+        alert("log in");
+        implicitFlow();
+    }
+}
+
 function populateUI(profile) {
   document.getElementById("displayName").innerText = profile.display_name;
   if (profile.images[0]) {
@@ -63,4 +70,21 @@ async function fetchCurrentSong(token) {
   });
 
   return result.json();
+}
+
+async function implicitFlow(){
+	var client_id = profile.id;
+	var redirect_uri = 'playlists.html';
+
+	var state = generateRandomString(16);
+
+	localStorage.setItem(stateKey, state);
+	var scope = 'user-read-private user-read-email';
+
+	var url = 'https://accounts.spotify.com/authorize';
+	url += '?response_type=token';
+	url += '&client_id=' + encodeURIComponent(client_id);
+	url += '&scope=' + encodeURIComponent(scope);
+	url += '&redirect_uri=' + encodeURIComponent(redirect_uri);
+	url += '&state=' + encodeURIComponent(state);
 }
