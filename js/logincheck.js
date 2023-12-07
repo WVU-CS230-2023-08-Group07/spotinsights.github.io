@@ -1,8 +1,8 @@
 const user = firebase.auth().currentUser;
 
 firebase.auth().onAuthStateChanged(function(user){
+	firebase.auth().signOut();
 	if(!user){
-		firebase.auth().signOut();
 		window.location.href = 'login.html'; 
 	}
 });
