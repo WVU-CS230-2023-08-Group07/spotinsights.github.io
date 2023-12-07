@@ -15,8 +15,8 @@
 	</style>
 	
 	<!-- JavaScript -->
+	<script src="js/firebaseInit.js"></script>
 	<script>
-	import {auth} from './firebaseInit.js';
 	firebase.auth().signOut()
     .then(() => {
         // User signed out successfully
