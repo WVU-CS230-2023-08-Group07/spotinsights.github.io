@@ -1,6 +1,6 @@
 body {
 	background-color: black;
-	color: white;
+	color: #000000;
 	font-family: 'Varela Round', sans-serif;
 }
 
@@ -97,6 +97,49 @@ body {
     margin-bottom: 1rem;
 }
 
+.card-body {
+    border-radius: 5px;
+    background-color: #1fd662ff;
+    padding: 20px;
+}
+
+.btn-primary {
+    background-color: black;
+    border: 25px;
+    color: white;
+    cursor: pointer;
+    padding: 2px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+
+
+.btn-primary:hover {
+    background-color: #808080;
+}
+
+.form-control {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 12px;
+    outline: none;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.form-control:focus {
+    border-color: #000000;
+    box-shadow: 0 0 5px rgb(117, 117, 117);
+}
+
+.row-gutters {
+    margin: auto;
+}
 
 
 /* Copyright */
