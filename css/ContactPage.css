@@ -102,3 +102,9 @@ h2 {
 #logo {
     width: 150px;
 }
+
+/* Navbar / topbar */
+#navbar-container {
+	display: flex;
+	justify-content: flex-end;
+}

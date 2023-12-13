@@ -80,7 +80,13 @@ body
 	#logo {
 		width: 150px;
 	}
-
+	
+	/* Navbar / topbar */
+	#navbar-container {
+		display: flex;
+		justify-content: flex-end;
+	}
+	
    /* Code for buttons if we need them */
    /*
   .button

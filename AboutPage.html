@@ -1,5 +1,17 @@
 <!DOCTYPE html>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+
+<!-- CSS Stylesheets -->
 <link rel="stylesheet" href="css/AboutPage.css">
+<link rel="stylesheet" href="./css/friendsList.css">
+
+<!-- JavaScript -->
+<script src="js/friendsList.js"></script>
+
 <html lang="en">
 
 <!-- Logo -->
@@ -7,6 +19,23 @@
 	<a href="index.html">
 		<img id="logo" src="assets/logo.png" alt="Logo" />
 	</a>
+</div>
+
+<!-- Sidebar / Friends List -->
+<div id="friends-list" style="left: -250px;">
+	<ul>
+		<li><p>Navigation Links<p></li>
+		<li><a class="nav-button" href="dashboard.html">Dashboard</a></li>
+		<li><a class="nav-button" href="analytics.html">Analytics</a></li>
+		<li><a class="nav-button" href="playlists.html">Playlists</a></li>
+		<li><a class="nav-button" href="AboutPage.html">About Us</a></li>
+		<li><a class="nav-button" href="ContactPage.html">Contact Us</a></li>
+	</ul> 
+</div>
+
+<!-- Navbar / Topbar -->
+<div id="navbar-container">
+	<div id="toggle-sidebar" onclick="toggleSidebar()">☰</div>
 </div>
 
 <div class="about-section">

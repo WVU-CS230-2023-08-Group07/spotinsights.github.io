@@ -14,9 +14,11 @@
 	<!-- CSS Stylesheets -->
 	<link rel="stylesheet" href="css/ContactPage.css">
 	<link rel="stylesheet" href="css/scrollbar.css">
+	<link rel="stylesheet" href="./css/friendsList.css">
 	
 	<!-- JavaScript -->
 	<script src="js/ContactPage.js"></script>
+	<script src="js/friendsList.js"></script>
 	<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 </head>
 <body>
@@ -25,6 +27,23 @@
 		<a href="index.html">
 			<img id="logo" src="assets/logo.png" alt="Logo" />
 		</a>
+	</div>
+	
+	<!-- Sidebar / Friends List -->
+	<div id="friends-list" style="left: -250px;">
+		<ul>
+			<li><p>Navigation Links<p></li>
+			<li><a class="nav-button" href="dashboard.html">Dashboard</a></li>
+			<li><a class="nav-button" href="analytics.html">Analytics</a></li>
+			<li><a class="nav-button" href="playlists.html">Playlists</a></li>
+			<li><a class="nav-button" href="AboutPage.html">About Us</a></li>
+			<li><a class="nav-button" href="ContactPage.html">Contact Us</a></li>
+		</ul> 
+	</div>
+	
+	<!-- Navbar / Topbar -->
+	<div id="navbar-container">
+		<div id="toggle-sidebar" onclick="toggleSidebar()">☰</div>
 	</div>
 	
 	<!-- Page Body Content -->
