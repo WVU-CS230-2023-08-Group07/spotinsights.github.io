@@ -1,23 +1,33 @@
-// Sign up function with Firebase
+/**
+ * Handles user registration by creating an account using Firebase authentication.
+ * Validates the entered email and password, ensuring they meet specified criteria.
+ * If successful, redirects the user to the dashboard; otherwise, displays an error message.
+ */
 function signUp() {
+	// Retrieve user input values
 	const email = document.getElementById('email').value;
 	const password = document.getElementById('password').value;
 	const confPassword = document.getElementById('confirm-password').value;
 	
-	if (password === confPassword) { // Check password and confirmPassword are the same
-		if (password.length >= 8) { // Check password is >= 8 characters
-			if (/[A-Z]/.test(password) && /[a-z]/.test(password)) { // Check that password contains uppercase and lowercase characters
-				if (/\d/.test(password)) { // Check that password contains a number
-					
+	// Check if entered passwords match
+	if (password === confPassword) {
+		// Check if password is at least 8 characters long
+		if (password.length >= 8) { 
+			 // Check if password contains at least one uppercase and one lowercase letter
+			if (/[A-Z]/.test(password) && /[a-z]/.test(password)) {
+				// Check if password contains at least one digit
+				if (/\d/.test(password)) {
+					// Attempt to create a user account using Firebase authentication
 					firebase.auth().createUserWithEmailAndPassword(email, password)
 						.then((userCredential) => {
 							// User signed up successfully
 							const user = userCredential.user;
 							console.log(user);
-							//window.location.href = 'login.html';
-							window.location.href = 'dashboard.html'; // Seems to automatically authenticate user
+							// Redirect the user to the dashboard upon successful signup
+							window.location.href = 'dashboard.html'; 
 						})
 						.catch((error) => {
+							// Log and display error messages if user signup fails
 							console.error(error.message);
 							window.alert(error.message);
 						});
@@ -44,11 +54,17 @@ function signUp() {
 	}
 }
 
-// Toggle password visibility
+/**
+ * Toggles the visibility of the password input field.
+ * Allows the user to show or hide the entered password.
+ * @param {string} passType - The type of password input field (e.g., 'password' or 'confirm-password').
+ */
 function passVis(passType) {
+	// Retrieve password input element and toggle button by element ID
 	const pass = document.getElementById(passType);
 	const btn = document.getElementById(passType.concat('-vis'));
 	
+	// Toggle between password and text visibility
 	if (pass.type === 'password') {
 		pass.type = 'text';
 		btn.innerText = 'Hide Pass';
