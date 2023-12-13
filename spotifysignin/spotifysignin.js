@@ -1,7 +1,14 @@
+/**
+ * @file SpotifyAuthentication.js
+ * @brief JavaScript code for Spotify authentication and data retrieval using the Authorization Code Flow and Spotify Web API.
+ */
+
 // Declare a variable to store the current song
 let song;
 
-// Event listener that executes when the DOM has fully loaded
+/**
+ * @brief Event listener that executes when the DOM has fully loaded.
+ */
 document.addEventListener('DOMContentLoaded', function() {
   // Hide the authorize button
   document.getElementById("authorizeButton").style.display = "none";
@@ -34,7 +41,10 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-// Function to redirect to Spotify Authorization Code Flow
+/**
+ * @brief Redirects to Spotify Authorization Code Flow.
+ * @param clientId - Spotify API client ID.
+ */
 export async function redirectToAuthCodeFlow(clientId) {
   // Generate a code verifier and challenge for PKCE
   const verifier = generateCodeVerifier(128);
@@ -56,7 +66,11 @@ export async function redirectToAuthCodeFlow(clientId) {
   document.location = `https://accounts.spotify.com/authorize?${params.toString()}`;
 }
 
-// Function to generate a random code verifier for PKCE
+/**
+ * @brief Generates a random code verifier for PKCE.
+ * @param length - Length of the code verifier.
+ * @return The generated code verifier.
+ */
 function generateCodeVerifier(length) {
   let text = '';
   let possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -67,7 +81,11 @@ function generateCodeVerifier(length) {
   return text;
 }
 
-// Function to generate the code challenge for PKCE
+/**
+ * @brief Generates the code challenge for PKCE.
+ * @param codeVerifier - The code verifier for which the challenge is generated.
+ * @return The generated code challenge.
+ */
 async function generateCodeChallenge(codeVerifier) {
   const data = new TextEncoder().encode(codeVerifier);
   const digest = await window.crypto.subtle.digest('SHA-256', data);
@@ -77,7 +95,12 @@ async function generateCodeChallenge(codeVerifier) {
     .replace(/=+$/, '');
 }
 
-// Function to exchange authorization code for an access token
+/**
+ * @brief Exchanges authorization code for an access token.
+ * @param clientId - Spotify API client ID.
+ * @param code - Authorization code.
+ * @return The access token.
+ */
 export async function getAccessToken(clientId, code) {
   // Retrieve the code verifier from local storage
   const verifier = localStorage.getItem("verifier");
@@ -102,7 +125,11 @@ export async function getAccessToken(clientId, code) {
   return access_token;
 }
 
-// Function to fetch user profile using the access token
+/**
+ * @brief Fetches user profile using the access token.
+ * @param token - Access token.
+ * @return User profile data.
+ */
 async function fetchProfile(token) {
   const result = await fetch("https://api.spotify.com/v1/me", {
     method: "GET", headers: { Authorization: `Bearer ${token}` }
@@ -112,7 +139,11 @@ async function fetchProfile(token) {
   return await result.json();
 }
 
-// Function to fetch the currently playing song using the access token
+/**
+ * @brief Fetches the currently playing song using the access token.
+ * @param token - Access token.
+ * @return Currently playing song data.
+ */
 async function fetchCurrentSong(token) {
   const result = await fetch("https://api.spotify.com/v1/me/player/currently-playing", {
     method: "GET", headers: { Authorization: `Bearer ${token}` }
@@ -122,7 +153,10 @@ async function fetchCurrentSong(token) {
   return result.json();
 }
 
-// Function to populate the UI with user profile and current song information
+/**
+ * @brief Populates the UI with user profile and current song information.
+ * @param profile - User profile data.
+ */
 async function populateUI(profile) {
   // Store user profile information in local storage
   localStorage.setItem("spotifyInfo", JSON.stringify(profile));
