@@ -116,8 +116,6 @@ body {
     margin-top: 20px;
 }
 
-
-
 .btn-primary:hover {
     background-color: #808080;
 }
@@ -140,7 +138,6 @@ body {
 .row-gutters {
     margin: auto;
 }
-
 
 /* Copyright */
 #copyright {

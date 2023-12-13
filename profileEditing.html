@@ -28,120 +28,106 @@
     <script src="js/friendsList.js"></script>
 </head>
 <body>
-<!-- Logo -->
-<div id="logo-container">
-    <a href="index.html">
-        <img id="logo" src="assets/logo.png" alt="Logo"/>
-    </a>
-</div>
-
-<!-- Sidebar / Friends List -->
-<div id="friends-list" style="left: -250px;">
-	<ul>
-		<li><p>Navigation Links<p></li>
-		<li><a class="nav-button" href="dashboard.html">Dashboard</a></li>
-		<li><a class="nav-button" href="analytics.html">Analytics</a></li>
-		<li><a class="nav-button" href="playlists.html">Playlists</a></li>
-		<li><a class="nav-button" href="AboutPage.html">About Us</a></li>
-		<li><a class="nav-button" href="ContactPage.html">Contact Us</a></li>
-	</ul> 
-</div>
-
-<!-- Navbar / Topbar -->
-<div id="navbar-container">
-    <div id="toggle-sidebar" onclick="toggleSidebar()">☰</div>
-    <div id="auth-buttons">
-        <a id="logout-button" href="logout.html">Log Out</a>
-    </div>
-</div>
-
-<!-- Navbar / Topbar -->
-<div id="navbar-container">
-	<div id="toggle-sidebar" onclick="toggleSidebar()">☰</div>
-</div>
-
-<div class="container">
-    <div class="row gutters">
-        <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
-            <div class="card h-100">
-                <div class="card-body">
-                    <div class="account-settings">
-                        <div class="user-profile">
-                            <div class="user-avatar">
-                                <img src="#" alt="">
-                            </div>
-                            <h5 class="user-name"></h5>
-                            <h6 class="user-email"></h6>
-                        </div>
-                        <div class="about">
-                            <h5>About</h5>
-                            <p>Enter the relevant info, then click the button below that says 'Update' to update your
-                                profile.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
-            <div class="card h-100">
-                <div class="card-body">
-                    <div class="row-gutters">
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                            <h2 class="mb-2 text-primary">Account Details</h2>
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="form-group">
-                                <label for="fullName">Username</label><br>
-                                <input type="text" class="form-control" id="fullName" placeholder="Enter New Username">
-                            </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="form-group">
-                                <label for="eMail" class="email">Email</label><br>
-                                <input type="email" class="form-control" id="eMail" placeholder="Enter New Email">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row-gutters">
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                            <h2 class="mb-2 text-primary">Password Update</h2>
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="form-group">
-                                <label for="old-password">Confirm Old Password</label><br>
-                                <input type="password" class="form-control" id="old-password" placeholder="Enter Old Password">
-                            </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="form-group">
-                                <label for="new-password" class="new-pass">Enter New Password</label><br>
-                                <input type="password" class="form-control" id="new-password" placeholder="Enter New Password">
-                            </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="form-group">
-                                <label for="re-enter-password" class="confirm-pass">Confirm Password</label><br>
-                                <input type="password" class="form-control" id="re-enter-password" placeholder="Renter New Password">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row-gutters">
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                            <div class="text-right">
-                                <button type="button" id="submit" name="submit" class="btn btn-primary">Update</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<!-- Copyright -->
-<div id="copyright">CS230 Group 7</div>
+	<!-- Logo -->
+	<div id="logo-container">
+		<a href="index.html">
+			<img id="logo" src="assets/logo.png" alt="Logo"/>
+		</a>
+	</div>
+	
+	<!-- Sidebar / Friends List -->
+	<div id="friends-list" style="left: -250px;">
+		<ul>
+			<li><p>Navigation Links<p></li>
+			<li><a class="nav-button" href="dashboard.html">Dashboard</a></li>
+			<li><a class="nav-button" href="analytics.html">Analytics</a></li>
+			<li><a class="nav-button" href="playlists.html">Playlists</a></li>
+			<li><a class="nav-button" href="AboutPage.html">About Us</a></li>
+			<li><a class="nav-button" href="ContactPage.html">Contact Us</a></li>
+		</ul> 
+	</div>
+	
+	<!-- Navbar / Topbar -->
+	<div id="navbar-container">
+		<div id="toggle-sidebar" onclick="toggleSidebar()">☰</div>
+		<div id="auth-buttons">
+			<a id="logout-button" href="logout.html">Log Out</a>
+		</div>
+	</div>
+	
+	<div class="container">
+		<div class="row gutters">
+			
+			<div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+				<div class="card h-100">
+					<div class="card-body">
+						
+						<div class="row-gutters">
+							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+								<h2 class="mb-2 text-primary">Account Details</h2>
+							</div>
+							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+								<div class="form-group">
+									<label for="eMail" class="email">New Email</label><br>
+									<input type="email" class="form-control" id="eMail" placeholder="Enter New Email">
+								</div>
+							</div>
+							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+								<div class="form-group">
+									<label for="password">Verify Password (Required)</label><br>
+									<input type="password" class="form-control" id="password" placeholder="Enter Password" required>
+								</div>
+							</div>
+						</div>
+						
+						<div class="row-gutters">
+							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+								<div class="text-right">
+									<button type="button" id="submit-1" name="submit" class="btn btn-primary">Update</button>
+								</div>
+							</div>
+						</div>
+						
+						<div class="row-gutters">
+							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+								<h2 class="mb-2 text-primary">Password Update</h2>
+							</div>
+							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+								<div class="form-group">
+									<label for="new-password" class="new-pass">New Password</label><br>
+									<input type="password" class="form-control" id="new-password" placeholder="Enter New Password">
+								</div>
+							</div>
+							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+								<div class="form-group">
+									<label for="re-enter-password" class="confirm-pass">Confirm New Password</label><br>
+									<input type="password" class="form-control" id="re-enter-password" placeholder="Renter New Password">
+								</div>
+							</div>
+							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+								<div class="form-group">
+									<label for="old-password">Verify Old Password (Required)</label><br>
+									<input type="password" class="form-control" id="old-password" placeholder="Enter Old Password" required>
+								</div>
+							</div>
+						</div>
+						
+						<div class="row-gutters">
+							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+								<div class="text-right">
+									<button type="button" id="submit-2" name="submit" class="btn btn-primary">Update</button>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	
+	<!-- Copyright -->
+	<div id="copyright">CS230 Group 7</div>
 </body>
 </html>
