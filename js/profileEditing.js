@@ -3,8 +3,10 @@ window.addEventListener('DOMContentLoaded', domLoaded); // Call domLoaded() when
 function domLoaded() {
 	// Get HTML Elements
 	const logoutButton = document.getElementById('logout-button');
+	const profileButton = document.getElementById('profile-button');
 	const button1 = document.getElementById('submit-1');	
 	const button2 = document.getElementById('submit-2');
+	const currEmail = document.getElementById('current-email');
 	
 	// Check if user is authenticated
 	firebase.auth().onAuthStateChanged((user) => {
@@ -12,8 +14,12 @@ function domLoaded() {
 			// User is signed in
 			console.log('User is signed in:', user);
 			
-			// Display the logout button
+			// Display the auth buttons
 			logoutButton.style.display = 'initial';
+			profileButton.style.display = 'initial';
+			
+			// Display the user email
+			currEmail.innerText += ' '.concat(user.email);
 			
 			// Button1 event listener (email)
 			button1.addEventListener('click', (event) => {

@@ -42,6 +42,17 @@ body {
 	cursor: pointer;
 	text-decoration: none;
 }
+#profile-button {
+	display: none; /* Do not display initially */
+	padding: 5px 10px; /* Top+Bottom Left+Right */
+	background-color: #1D1D1D;
+	border: none;
+	border-radius: 20px;
+	color: white;
+	font-weight: bold;
+	cursor: pointer;
+	text-decoration: none;
+}
 
 /* Page body components */
 #body-container {

@@ -17,9 +17,9 @@
     <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-firestore.js"></script>
 
     <!-- CSS Stylesheets -->
-    <link rel="stylesheet" href="./css/profileEditing.css">
-    <link rel="stylesheet" href="./css/scrollbar.css">
-    <link rel="stylesheet" href="./css/friendsList.css">
+    <link rel="stylesheet" href="css/profileEditing.css">
+    <link rel="stylesheet" href="css/scrollbar.css">
+    <link rel="stylesheet" href="css/friendsList.css">
 
     <!-- JavaScript -->
     <script src="js/firebaseInit.js"></script>
@@ -51,11 +51,12 @@
 	<div id="navbar-container">
 		<div id="toggle-sidebar" onclick="toggleSidebar()">☰</div>
 		<div id="auth-buttons">
+			<a id="profile-button" href="profileEditing.html">Profile</a>
 			<a id="logout-button" href="logout.html">Log Out</a>
 		</div>
 	</div>
 	
-	<div class="container">
+	<div id="container">
 		<div class="row gutters">
 			
 			<div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
@@ -63,6 +64,15 @@
 					<div class="card-body">
 						
 						<div class="row-gutters">
+							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+								<h2 class="mb-2 text-primary">Profile Info</h2>
+							</div>
+							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+								<div class="form-group">
+									<p id="current-email">Email:</p>
+								</div>
+							</div>
+							
 							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 								<h2 class="mb-2 text-primary">Email Update</h2>
 							</div>

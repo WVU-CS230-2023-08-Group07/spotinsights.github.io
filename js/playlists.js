@@ -3,6 +3,7 @@ window.addEventListener('DOMContentLoaded', domLoaded); // Call domLoaded() when
 function domLoaded() {
 	// Get HTML Elements
 	const logoutButton = document.getElementById('logout-button');
+	const profileButton = document.getElementById('profile-button');
 	
 	// Check if user is authenticated
 	firebase.auth().onAuthStateChanged((user) => {
@@ -10,8 +11,9 @@ function domLoaded() {
 			// User is signed in
 			console.log('User is signed in:', user);
 			
-			// Display the logout button
+			// Display the auth buttons
 			logoutButton.style.display = 'initial';
+			profileButton.style.display = 'initial';
 		}
 		else {
 			// User is not signed in
