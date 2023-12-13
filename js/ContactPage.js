@@ -18,11 +18,6 @@ function domLoaded() {
 		const emailForm = document.getElementById('email').value;
 		const messageForm = document.getElementById('message').value;
 		
-		// Check inputs
-		console.log('Name:', nameForm);
-		console.log('Email:', emailForm);
-		console.log('Message:', messageForm);
-		
 		// Check if any fields are empty
 		if (nameForm === '' || emailForm === '' || messageForm === '') {
 			status.innerText = 'Please enter all fields';

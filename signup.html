@@ -38,27 +38,7 @@
 		
 		<div class="input-container">
 			<label for="email">Email:</label>
-			<input id="email" type="text" name="email" required>
-		</div>
-		
-		<div class="input-container">
-			<label for="password">Password:</label>
-			<input id="password" type="password" name="password" required>
-			<div class="vis-container">
-				<span id="password-vis" onclick="passVis('password')">Show Pass</span>
-			</div>
-		</div>
-		
-		<div class="input-container">
-			<label for="confirm-password">Confirm Password:</label>
-			<input id="confirm-password" type="password" name="confirm-password" required>
-			<div class="vis-container">
-				<span id="confirm-password-vis" onclick="passVis('confirm-password')">Show Pass</span>
-			</div>
-		</div>
-		
-		<div class="button-container">
-			<button id="signup-button" type="submit">Sign Up</button>
+			<input id="email" type="text" name="email" placeholder="Email" required>
 		</div>
 		
 		<p id="requirements-text">Password Requirements:</p>
@@ -68,14 +48,30 @@
 			<li>Must contain at least 1 number.</li>
 		</ul>
 		
+		<div class="input-container">
+			<label for="password">Password:</label>
+			<input id="password" type="password" name="password" placeholder="Password" required>
+			<div class="vis-container">
+				<span id="password-vis" onclick="passVis('password')">Show Password</span>
+			</div>
+		</div>
+		
+		<div class="input-container">
+			<label for="confirm-password">Confirm Password:</label>
+			<input id="confirm-password" type="password" name="confirm-password" placeholder="Confirm Password" required>
+			<div class="vis-container">
+				<span id="confirm-password-vis" onclick="passVis('confirm-password')">Show Password</span>
+			</div>
+		</div>
+		
+		<div class="button-container">
+			<button id="signup-button" type="submit">Sign Up</button>
+		</div>
+		
 		<p id="login-text">Already have an account?</p>
 		<div class="button-container">
 			<button id="login-button" onclick="location.href = 'login.html';">Login</button>
 		</div>
-		
-		<!-- <div class="error-container">
-			<p id="signup-error"></p>
-		</div> -->
 	</form>
 	
 	<!-- Copyright -->

@@ -68,9 +68,12 @@ body {
 #requirements-list {
 	text-align: left;
 	padding-left: 30px;
+	margin-bottom: 30px;
 }
-#login-text,
 #requirements-text {
+	margin: 30px 0px 20px 0px; /* Top Right Bottom Left */
+}
+#login-text {
 	margin: 50px 0px 20px 0px; /* Top Right Bottom Left */
 }
 #login-button {
