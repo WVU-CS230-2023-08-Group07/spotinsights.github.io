@@ -33,7 +33,7 @@ function domLoaded() {
 								// Successfully reauthenticated user
 								user.verifyBeforeUpdateEmail(email) // Send email change verification
 									.then(() => {
-									// Verification email successfully sent
+										// Verification email successfully sent
 										console.log('Please check your email for verification, you will currently be logged out.');
 										window.alert('Please check your email for verification, you will currently be logged out.');
 										
@@ -61,59 +61,76 @@ function domLoaded() {
 			});
 			
 			// Button2 event listener (password)
-			/*
 			button2.addEventListener('click', (event) => {
 				// Get HTML Elements
-				const oldPass = document.getElementById('old-password').value;
 				const newPass = document.getElementById('new-password').value;
 				const confNewPass = document.getElementById('re-enter-password').value;
+				const oldPass = document.getElementById('old-password').value;
 				
 				const credential = firebase.auth.EmailAuthProvider.credential( // Create a credential obj with the oldPass
 					user.email,
 					oldPass
 				);
 				
-				user.reauthenticateWithCredential(credential) // Attempt to reauthenticate user with oldPass credential
-					.then(() => {
-						
-					})
-					.then(() => {
-						
-					})
-					.catch((error) => {
-						
-					});
-					
-				
-				
-				
-				if (newPass === confNewPass) { // Check that newPass and confNewPass are the same
-					if (newPass.length >= 8) { // Check password is >= 8 characters
-						if (/[A-Z]/.test(newPass) && /[a-z]/.test(newPass)) { // Check that password contains uppercase and lowercase characters
-							if (/\d/.test(newPass)) { // Check that password contains a Number
-								
+				if (oldPass !== '') { // Check that the old password is provided
+					if (newPass !== '' && confNewPass !== '') { // Check that the new passwords are provided
+						if (newPass === confNewPass) { // Check that newPass and confNewPass are the same
+							if (newPass.length >= 8) { // Check password is >= 8 characters
+								if (/[A-Z]/.test(newPass) && /[a-z]/.test(newPass)) { // Check that password contains uppercase and lowercase characters
+									if (/\d/.test(newPass)) { // Check that password contains a Number
+		
+										user.reauthenticateWithCredential(credential) // Attempt to reauthenticate user with oldPass credential
+											.then(() => {
+												// Successfully reauthenticated user
+												user.updatePassword(newPass)
+													.then(() => {
+														// Successfully changed password
+														console.log('Successfully changed password, you will currently be logged out.');
+														window.alert('Successfully changed password, you will currently be logged out.');
+														
+														window.location.href = 'logout.html'; // Log out user
+													})
+													.catch((error) => {
+														console.error('Error updating password:', error.message);
+														window.alert('Invalid new password value');
+													});
+											})
+											.catch((error) => {
+												console.error('Error reauthenticating user:', error.message);
+												window.alert('Invalid old password value.');
+											});
+											
+									}
+									else {
+										console.error('New password must contain at least one number.');
+										window.alert('New password must contain at least one number.');
+									}
+								}
+								else {
+									console.error('New password must contain at least one lowercase letter and one uppercase letter.');
+									window.alert('New password must contain at least one lowercase letter and one uppercase letter.');
+								}
 							}
 							else {
-								console.error('New password must contain at least one number.');
-								window.alert('New password must contain at least one number.');
+								console.error('New password must be at least 8 characters long.');
+								window.alert('New password must be at least 8 characters long.');
 							}
 						}
 						else {
-							console.error('New password must contain at least one lowercase letter and one uppercase letter.');
-							window.alert('New password must contain at least one lowercase letter and one uppercase letter.');
+							console.error('New passwords do not match.');
+							window.alert('New passwords do not match.');
 						}
 					}
 					else {
-						console.error('New password must be at least 8 characters long.');
-						window.alert('New password must be at least 8 characters long.');
+						console.error('New password values are required.');
+						window.alert('New password values are required.');
 					}
 				}
 				else {
-					console.error('New passwords do not match.');
-					window.alert('New passwords do not match.');
-				}
-				
-			});*/
+					console.error('Old password is required.');
+					window.alert('Old password is required.');
+				}				
+			});
 		}
 		else {
 			// User is not signed in
