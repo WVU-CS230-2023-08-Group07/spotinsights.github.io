@@ -1,162 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
-    <style>
-<<<<<<< Updated upstream
-        body {
-            font-family: 'Varela Round', sans-serif;
-            text-align: center;
-            background-color: black;
-            color: #1DB954;
-        }
-		
-		#heading {
-			padding-top: 50px;
-		}
-		
-        form {
-            max-width: 400px;
-			margin: auto;
-        }
-=======
-body {
-    font-family: 'Varela Round', sans-serif;
-    text-align: center;
-    background-color: black;
-}
-
-#heading {
-    padding-top: 50px;
-    color: white;
-}
->>>>>>> Stashed changes
-
-form {
-    max-width: 400px;
-    margin: auto;
-}
-
-label {
-    display: block;
-    margin-bottom: 15px;
-    color: white; 
-    font-family: 'Varela Round', sans-serif;
-}
-
-input[type="text"],
-input[type="email"],
-textarea {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 16px;
-    box-sizing: border-box;
-    color: black;
-    background-color: lightgray; /* Having trouble changing boxes to light gray!! */
-    border: 2px solid #1fd662ff;
-}
-
-textarea {
-    resize: vertical;
-    min-height: 150px;
-    max-width: 100%;
-}
-
-button {
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-right: 10px;
-    font-size: 16px;
-    font-weight: bold;
-}
-
-button.cancel {
-    background-color: #1fd662;
-    color: white;
-}
-
-button.cancel:hover {
-    background-color: #CC0000;
-}
-
-button.submit {
-    background-color: #1fd662;
-    color: white;
-}
-
-<<<<<<< Updated upstream
-        h2 {
-            margin-bottom: 25px;
-        }
-		
-		/* Copyright */
-		#copyright {
-			position: fixed;
-			width: 99%;
-			bottom: 0%;
-			color: gray;
-			font-size: 14px;
-			text-align: center;
-		}
-		
-		/* Logo components */
-		#logo-container {
-			position: fixed;
-			width: 99%;
-			top: 1%;
-		}
-		#logo-container a {
-			display: block;
-			margin: 0 auto; /* Top+Bottom Left+Right */
-			width: 150px;
-		}
-		#logo {
-			width: 150px;
-		}
-=======
-button.submit:hover {
-    background-color: #45a049;
-}
-
-h2 {
-    margin-bottom: 25px;
-}
-
-
-#copyright {
-    position: fixed;
-    width: 99%;
-    bottom: 0%;
-    color: gray;
-    font-size: 14px;
-    text-align: center;
-}
-
-
-#logo-container {
-    position: fixed;
-    width: 99%;
-    top: 1%;
-}
-
-#logo-container a {
-    display: block;
-    margin: 0 auto; 
-    width: 150px;
-}
-
-#logo {
-    width: 150px;
-}
->>>>>>> Stashed changes
-    </style>
+    <title>SpotInsights - Contact Us</title>
+	<link rel="icon" type="image/png" href="assets/logoi.png">
+	
+	<!-- Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+	
+	<!-- CSS Stylesheets -->
+	<link rel="stylesheet" href="css/ContactPage.css">
+	<link rel="stylesheet" href="css/scrollbar.css">
+	
+	<!-- JavaScript -->
+	<script src="js/ContactPage.js"></script>
+	<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 </head>
-
 <body>
 	<!-- Logo -->
 	<div id="logo-container">
@@ -165,9 +27,9 @@ h2 {
 		</a>
 	</div>
 	
+	<!-- Page Body Content -->
     <h2 id="heading">Contact Us</h2>
-
-    <form action="mailto:your-email@example.com" method="post" enctype="text/plain">
+    <form id="contact-form" action="mailto:your-email@example.com" method="post" enctype="text/plain">
         <label for="name" style="font-family: 'Varela Round', sans-serif;">Name:</label>
         <input type="text" id="name" name="name" required>
 
@@ -177,12 +39,12 @@ h2 {
         <label for="message" style="font-family: 'Varela Round', sans-serif;">Message (500 character limit):</label>
         <textarea id="message" name="message" rows="6" maxlength="500" required></textarea>
 
-        <button type="button" class="cancel">Cancel</button>
-        <button type="submit" class="submit">Submit</button>
+        <button id="cancel" type="button" onclick="location.reload();">Cancel</button>
+        <button id="submit" type="submit">Submit</button>
     </form>
-
+	<p id="status-message"></p>
+	
 	<!-- Copyright -->
 	<div id="copyright">CS230 Group 7</div>
 </body>
-
 </html>
