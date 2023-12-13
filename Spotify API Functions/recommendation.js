@@ -2,6 +2,8 @@
 
 // Authorization token that must have been created previously
 const token = 'Auth Token Here';
+
+// Used to fetch the Web API
 async function fetchWebApi(endpoint, method, body) {
     const res = await fetch(`https://api.spotify.com/${endpoint}`, {
         headers: {
@@ -13,8 +15,10 @@ async function fetchWebApi(endpoint, method, body) {
     return await res.json();
 }
 
-const topTracksIds = [ ]; // Call "top5tracks.js" function "getTopTracks" here to store the result to be used for the recommendations
+// Call "top5tracks.js" function "getTopTracks" here to store the result to be used for the recommendations
+const topTracksIds = [ ]; 
 
+// Get recommendations based on the top tracks
 async function getRecommendations(){
     // Endpoint reference : https://developer.spotify.com/documentation/web-api/reference/get-recommendations
     return (await fetchWebApi(
@@ -22,6 +26,7 @@ async function getRecommendations(){
     )).tracks;
 }
 
+// Call recommendedTracks function and display it
 const recommendedTracks = await getRecommendations();
 console.log(
     recommendedTracks.map(
