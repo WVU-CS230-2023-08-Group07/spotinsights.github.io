@@ -1,8 +1,16 @@
+/**
+ * @file This script interacts with the Spotify API to embed a Spotify track in a webpage and display user information.
+ */
+
 // Initialize variables to store the Spotify track URL and URL parts
 let spotifyTrackUrl = '';
 let urlParts = '';
 
-// Wait for the DOM to be fully loaded before executing the script
+/**
+ * @brief Event listener for when the DOM is fully loaded.
+ * @details Logs Spotify information and song URL stored in local storage, constructs an iframe to embed the Spotify track, and populates user interface.
+ * @param {Event} event - The DOMContentLoaded event.
+ */
 document.addEventListener('DOMContentLoaded', function() {
   // Log Spotify information and song URL stored in local storage
   console.log(localStorage.getItem("spotifyInfo"));
@@ -33,9 +41,16 @@ document.addEventListener('DOMContentLoaded', function() {
   refreshIframe();
 });
 
-// Populate user interface with Spotify user information
+/**
+ * @brief Populates the user interface with Spotify user information.
+ * @param {Object} profile - The Spotify user profile information.
+ */
 populateUI(JSON.parse(localStorage.getItem("spotifyInfo")));
 
+/**
+ * @brief Populates various elements in the UI with Spotify user information.
+ * @param {Object} profile - The Spotify user profile information.
+ */
 function populateUI(profile) {
   // Set various elements in the UI with Spotify user information
   document.getElementById("displayName").innerText = profile.display_name;
@@ -53,7 +68,9 @@ function populateUI(profile) {
   document.getElementById("url").setAttribute("href", profile.href);
 }
 
-// Refresh the iframe by fetching the current song and updating the iframe source
+/**
+ * @brief Refreshes the iframe by fetching the current song and updating the iframe source.
+ */
 function refreshIframe() {
   const iframe = document.getElementById('spotifyEmbed');
 
@@ -75,7 +92,11 @@ function refreshIframe() {
   iframe.src = iframe.src;
 }
 
-// Asynchronously fetch the current song data from the Spotify API
+/**
+ * @brief Asynchronously fetches the current song data from the Spotify API.
+ * @param {string} token - The Spotify access token.
+ * @return {Promise<Object>} A promise that resolves to the current song data.
+ */
 async function fetchCurrentSong(token) {
   const result = await fetch("https://api.spotify.com/v1/me/player/currently-playing", {
     method: "GET",
@@ -85,7 +106,10 @@ async function fetchCurrentSong(token) {
   return result.json();
 }
 
-// Function to initiate the implicit authorization flow for Spotify API
+/**
+ * @brief Initiates the implicit authorization flow for Spotify API.
+ * @details Extracts the client ID from the user profile, generates a random string as the state parameter for security, and constructs the authorization URL.
+ */
 async function implicitFlow() {
   // Extract the client ID from the user profile
   var client_id = profile.id;
