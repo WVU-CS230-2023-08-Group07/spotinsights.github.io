@@ -1,130 +1,141 @@
 <!DOCTYPE html>
-
-<!-- Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
-
-<!-- CSS Stylesheets -->
-<link rel="stylesheet" href="css/AboutPage.css">
-<link rel="stylesheet" href="./css/friendsList.css">
-
-<!-- JavaScript -->
-<script src="js/friendsList.js"></script>
-
 <html lang="en">
-
-<!-- Logo -->
-<div id="logo-container">
-	<a href="dashboard.html">
-		<img id="logo" src="assets/logo.png" alt="Logo" />
-	</a>
-</div>
-
-<!-- Sidebar / Friends List -->
-<div id="friends-list" style="left: -250px;">
-	<ul>
-		<li><p>Navigation Buttons<p></li>
-		<li><a class="nav-button" href="dashboard.html">Dashboard</a></li>
-		<li><a class="nav-button" href="analytics.html">Analytics</a></li>
-		<li><a class="nav-button" href="playlists.html">Playlists</a></li>
-		<li><a class="nav-button" href="AboutPage.html">About Us</a></li>
-		<li><a class="nav-button" href="ContactPage.html">Contact Us</a></li>
-		<li><a class="nav-button" href="spotifysignin/">Spotify Authorization</a></li>
-	</ul> 
-</div>
-
-<!-- Navbar / Topbar -->
-<div id="navbar-container">
-	<div id="toggle-sidebar" onclick="toggleSidebar()">☰</div>
-</div>
-
-<div class="about-section">
-    <h1>About the Team</h1>
-    <p>SpotInsights was a project we created for the fall semester of 2023 at WVU.</p>
-    <p>Throughout the semester we experimented with several concepts and ideas, and in the end decided to make this tool for Spotify!</p>
-    <p>Below are all of the team members who worked to make this project possible.</p>
-  </div>
-  
-  <h2 style="text-align:center">Team Members</h2>
-  <div class="row">
-    <div class="column">
-      <div class="card">
-        <div class="container">
-          <h2>Luke Monti</h2>
-          <p class="title">Front End Team</p>
-          <p class="body">Luke Monti is an amateur coder who began most of his learning in 2023. He had a bit of a rough start, but eventually found his footing. Now, he helps with the front-end workload.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="column">
-        <div class="card">
-          <div class="container">
-            <h2>Ethan Boyd</h2>
-            <p class="title">Back End Team</p>
-            <p class="body"></p>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="column">
-          <div class="card">
-            <div class="container">
-              <h2>Michael Dolan</h2>
-              <p class="title">Back End Team</p>
-              <p class="body"></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="column">
-            <div class="card">
-              <div class="container">
-                <h2>Corbin Mauck</h2>
-                <p class="title">Front End Team</p>
-                <p class="body"></p>
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="column">
-              <div class="card">
-                <div class="container">
-                  <h2>Parker Morgan</h2>
-                  <p class="title">Product Owner</p>
-                  <p class="body">Parker is currently a student at WVU studying cybersecurity. A avid music fan, he wished to create a website that assisted users in collating and sharing Spotify playlists with their friends.</p>
-                </div>
-              </div>
-            </div>
-  
-            <div class="row">
-              <div class="column">
-                <div class="card">
-                  <div class="container">
-                    <h2>Cayden Pava</h2>
-                    <p class="title">Scrum Master</p>
-                    <p class="body"></p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="column">
-                  <div class="card">
-                    <div class="container">
-                      <h2>Ross Shaner</h2>
-                      <p class="title">Back End Team</p>
-                      <p class="body"></p>
-                    </div>
-                  </div>
-                </div>
-
-<!-- Copyright -->
-<div id="copyright">CS230 Group 7</div>
-
-</div>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Spotinsights - About Us</title>
+	<link rel="icon" type="image/png" href="assets/logoi.png">
+	
+	<!-- Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+	
+	<!-- Firebase SDK -->
+	<script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-firestore.js"></script>
+	
+	<!-- CSS Stylesheets -->
+	<link rel="stylesheet" href="css/AboutPage.css">
+	<link rel="stylesheet" href="css/scrollbar.css">
+	<link rel="stylesheet" href="css/friendsList.css">
+	
+	<!-- JavaScript -->
+	<script src="js/friendsList.js"></script>
+</head>
+<body>
+	<!-- Logo -->
+	<div id="logo-container">
+		<a href="dashboard.html">
+			<img id="logo" src="assets/logo.png" alt="Logo" />
+		</a>
+	</div>
+	
+	<!-- Sidebar / Friends List -->
+	<div id="friends-list" style="left: -250px;">
+		<ul>
+			<li><p>Navigation Buttons<p></li>
+			<li><a class="nav-button" href="dashboard.html">Dashboard</a></li>
+			<li><a class="nav-button" href="analytics.html">Analytics</a></li>
+			<li><a class="nav-button" href="playlists.html">Playlists</a></li>
+			<li><a class="nav-button" href="AboutPage.html">About Us</a></li>
+			<li><a class="nav-button" href="ContactPage.html">Contact Us</a></li>
+			<li><a class="nav-button" href="spotifysignin/">Spotify Authorization</a></li>
+		</ul>
+	</div>
+	
+	<!-- Navbar / Topbar -->
+	<div id="navbar-container">
+		<div id="toggle-sidebar" onclick="toggleSidebar()">☰</div>
+	</div>
+	
+	<div class="about-section">
+		<h1>About the Team</h1>
+		<p>SpotInsights was a project we created for the fall semester of 2023 at WVU.</p>
+		<p>Throughout the semester we experimented with several concepts and ideas, and in the end decided to make this tool for Spotify!</p>
+		<p>Below are all of the team members who worked to make this project possible.</p>
+	</div>
+	
+	<h2 id="team-title" style="text-align:center">Team Members</h2>
+	
+	<div class="row">
+		<div class="column">
+			<div class="card">
+				<div class="container">
+					<h2>Luke Monti</h2>
+					<p class="title">Front End Team</p>
+					<p class="body">Luke is an amateur coder who began most of his learning in 2023. He had a bit of a rough start, but eventually found his footing. Now, he helps with the front-end workload.</p>
+				</div>
+			</div>
+		</div>
+		
+		<div class="column">
+			<div class="card">
+				<div class="container">
+					<h2>Michael Dolan</h2>
+					<p class="title">Front End Team</p>
+					<p class="body">...</p>
+				</div>
+			</div>
+		</div>
+		
+		<div class="column">
+			<div class="card">
+				<div class="container">
+					<h2>Parker Morgan</h2>
+					<p class="title">Product Owner / Back End Team</p>
+					<p class="body">Parker is currently a student at WVU studying cybersecurity. A avid music fan, he wished to create a website that assisted users in collating and sharing Spotify playlists with their friends.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="column">
+			<div class="card">
+				<div class="container">
+					<h2>Corbin Mauck</h2>
+					<p class="title">Back End Team</p>
+					<p class="body">...</p>
+				</div>
+			</div>
+		</div>
+		
+		<div class="column" id="last-column">
+			<div class="card">
+				<div class="container">
+					<h2>Ross Shaner</h2>
+					<p class="title">Spotify API Team</p>
+					<p class="body">...</p>
+				</div>
+			</div>
+		</div>
+		
+		<div class="column">
+			<div class="card">
+				<div class="container">
+					<h2>Ethan Boyd</h2>
+					<p class="title">Spotify API Team</p>
+					<p class="body">...</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="column">
+			<div class="card">
+				<div class="container">
+					<h2>Cayden Pava</h2>
+					<p class="title">Scrum Master</p>
+					<p class="body">Cayden is a cybersecurity student at WVU with experience predominantly in backend development. Being fairly new into programming, he works to both sharpen his skills as well as assist in coordinating the team.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Copyright -->
+	<div id="copyright">CS230 Group 7</div>
+</body>
+</html>

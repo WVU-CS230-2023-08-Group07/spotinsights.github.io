@@ -1,119 +1,93 @@
-body
- {
-    font-family: 'Varela Round', sans-serif;
-    background-color: black;
-    color: #1ed75fc4
-  }
-  
-  html 
-  {
-    box-sizing: border-box;
-  }
-  
-  *, *:before, *:after 
-  {
-    box-sizing: inherit;
-  }
-  
-  .column {
-    float: left;
-    width: 33.3%;
-    margin-bottom: 16px;
-    padding: 0 8px;
-  }
-  
-  .card 
-  {
-    box-shadow: 0 4px 8px 0 #1ed75f44;
-    margin: 8px;
-  }
-  
-  .about-section 
-  {
-    padding: 50px;
-    text-align: center;
-    background-color: black;
-    color: #1ED760;
-  }
-  
-  .container
-   {
-    text-align: left;
-    background-color: black;
-    color: #1ED760;
-    padding: 0 16px;
-  }
-  
-  .container::after, .row::after 
-  {
-    content: "";
-    clear: both;
-    display: table;
-  }
-  
-  .title
-   {
-    color: #1ed75fc4;
-  }
-  
-  /* Copyright */
-  #copyright {
+html {
+	box-sizing: border-box;
+} 
+
+body {
+	font-family: 'Varela Round', sans-serif;
+	background-color: black;
+	color: white;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+.column {
+	float: left;
+	width: 33.3%;
+	margin-bottom: 16px;
+	padding: 0 8px;
+}
+
+.card {
+	box-shadow: 0 8px 16px 0 #1ed75f44;
+	border: 2px solid #1fd662ff;
+	margin: 8px;
+}
+
+.about-section {
+	padding: 50px;
+	text-align: center;
+	background-color: black;
+}
+
+.container {
+	text-align: left;
+	background-color: black;
+	padding: 0 16px;
+}
+
+.container::after, .row::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+.container h2 {
+	color: #1fd662ff;
+}
+
+#team-title {
+	color: #1fd662ff;
+}
+
+.title {
+	color: #1ed75fc4;
+}
+
+#last-column {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Copyright */
+#copyright {
 	position: fixed;
 	width: 99%;
 	bottom: 0%;
 	color: gray;
 	font-size: 14px;
 	text-align: center;
-	}
-		
-	/* Logo components */
-	#logo-container {
-		position: fixed;
-		width: 99%;
-		top: 1%;
-	}
-	#logo-container a {
-		display: block;
-		margin: 0 auto; /* Top+Bottom Left+Right */
-		width: 150px;
-	}
-	#logo {
-		width: 150px;
-	}
+}
 	
-	/* Navbar / topbar */
-	#navbar-container {
-		display: flex;
-		justify-content: flex-end;
-	}
-	
-   /* Code for buttons if we need them */
-   /*
-  .button
-   {
-    border: none;
-    outline: 0;
-    display: inline-block;
-    padding: 8px;
-    color: #1ED760;
-    background-color: rgb(41, 41, 41);
-    text-align: center;
-    cursor: pointer;
-    width: 100%;
-  }
- */
- 
- /* .button:hover 
-  {
-    background-color: grey;
-  }
-  
-  @media screen and (max-width: 650px)
-   {
-    .column
-     {
-      width: 100%;
-      display: block;
-    }
-  }
-  */
+/* Logo components */
+#logo-container {
+	position: fixed;
+	width: 99%;
+	top: 1%;
+}
+#logo-container a {
+	display: block;
+	margin: 0 auto; /* Top+Bottom Left+Right */
+	width: 150px;
+}
+#logo {
+	width: 150px;
+}
+
+/* Navbar / topbar */
+#navbar-container {
+	display: flex;
+	justify-content: flex-end;
+}
