@@ -1,6 +1,6 @@
 # spotinsights.github.io
 # SpotInsights - Spotify Analytics Viewer
-
+#[View the site here](https://wvu-cs230-2023-08-group07.github.io/spotinsights.github.io/)
 ## Overview:
 SpotInsights is a web-based Spotify analytics viewer designed to provide users with a rich understanding of their music preferences on the Spotify platform. With SpotInsights, you can delve into detailed statistics, visualize trends, and uncover fascinating patterns in your listening history.
 
