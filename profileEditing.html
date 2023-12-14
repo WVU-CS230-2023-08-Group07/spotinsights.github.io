@@ -38,13 +38,14 @@
 	<!-- Sidebar / Friends List -->
 	<div id="friends-list" style="left: -250px;">
 		<ul>
-			<li><p>Navigation Links<p></li>
+			<li><p>Navigation Buttons<p></li>
 			<li><a class="nav-button" href="dashboard.html">Dashboard</a></li>
 			<li><a class="nav-button" href="analytics.html">Analytics</a></li>
 			<li><a class="nav-button" href="playlists.html">Playlists</a></li>
 			<li><a class="nav-button" href="AboutPage.html">About Us</a></li>
 			<li><a class="nav-button" href="ContactPage.html">Contact Us</a></li>
-		</ul> 
+			<li><a class="nav-button" href="spotifysignin/">Spotify Authorization</a></li>
+		</ul>
 	</div>
 	
 	<!-- Navbar / Topbar -->
@@ -102,6 +103,19 @@
 							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 								<h2 class="mb-2 text-primary">Update Password</h2>
 							</div>
+							
+							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+								<div class="form-group">
+									<p id="requirements-text">Password Requirements:</p>
+									<ul id="requirements-list">
+										<li>Must be at least 8 characters in length.</li>
+										<li>Must contain at least 1 uppercase letter and 1 lowercase letter.</li>
+										<li>Must contain at least 1 number.</li>
+									</ul>
+								</div>
+							</div>
+							
+							
 							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 								<div class="form-group">
 									<label for="new-password" class="new-pass">New Password</label><br>

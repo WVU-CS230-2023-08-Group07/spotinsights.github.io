@@ -21,16 +21,16 @@
 	<!-- JavaScript -->
 	<script src="js/firebaseInit.js"></script>
 	<script>
-	firebase.auth().signOut()
-    .then(() => {
-        // User signed out successfully
-        console.log('User signed out');
-        window.location.href = 'login.html';
-      })
-      .catch((error) => {
-        console.error(error.message);
-        window.location.href = 'dashboard.html';
-      }); 
+		firebase.auth().signOut()
+		.then(() => {
+			// User signed out successfully
+			console.log('User signed out');
+			window.location.href = 'login.html';
+		})
+		.catch((error) => {
+			console.error(error.message);
+			window.location.href = 'dashboard.html';
+		}); 
     </script>
 </head>
 <body>
