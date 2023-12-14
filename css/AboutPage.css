@@ -1,6 +1,10 @@
 html {
 	box-sizing: border-box;
+<<<<<<< Updated upstream
 } 
+=======
+}
+>>>>>>> Stashed changes
 
 body {
 	font-family: 'Varela Round', sans-serif;
@@ -37,7 +41,12 @@ body {
 	padding: 0 16px;
 }
 
+<<<<<<< Updated upstream
 .container::after, .row::after {
+=======
+.container::after,
+.row::after {
+>>>>>>> Stashed changes
 	content: "";
 	clear: both;
 	display: table;
@@ -61,14 +70,19 @@ body {
 	margin-right: auto;
 }
 
+<<<<<<< Updated upstream
 /* Copyright */
+=======
+
+>>>>>>> Stashed changes
 #copyright {
 	position: fixed;
 	width: 99%;
 	bottom: 0%;
-	color: gray;
+	color: white; 
 	font-size: 14px;
 	text-align: center;
+<<<<<<< Updated upstream
 }
 	
 /* Logo components */
@@ -91,3 +105,6 @@ body {
 	display: flex;
 	justify-content: flex-end;
 }
+=======
+}
+>>>>>>> Stashed changes
